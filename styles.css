@@ -1,0 +1,167 @@
+body {
+  background: #008080;
+  font-family: "MS Sans Serif";
+  user-select: none;
+  cursor: default !important;
+}
+
+.window {
+  width: 600px;
+  height: 200px;
+  border: outset 2px;
+  position: relative;
+  background: #c0c0c0;
+}
+
+.window .titlebar {
+  background: #000080;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  left: 0px;
+  height: 22px;
+  border: none;
+  color: #fff;
+  font-size: 14px;
+  line-height: 21px;
+  padding-left: 5px;
+}
+
+.window .titlebar .titlebar-buttons {
+  border: outset 2px;
+  background: #c0c0c0;
+  display: inline-block;
+  float: right;
+  height: 12px;
+  width: 12px;
+  line-height: 12px;
+  text-align: center;
+  font-size: 20px;
+  margin: 3px;
+  color: #000;
+}
+
+.window .content {
+  position: absolute;
+  top: 22px;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+}
+
+.buttons-right {
+  position: absolute;
+  bottom: 5px;
+  right: 5px;
+}
+
+.button {
+  display: inline-block;
+  background: #c0c0c0;
+  padding: 3px 25px;
+  font-family: arial;
+  font-size: 12px;
+  border: outset 2px;
+  position: relative;
+}
+
+.button:active {
+  border: inset 2px;
+}
+
+.default:before {
+  content: "";
+  position: absolute;
+  display: inline-block;
+  top: 2px;
+  bottom: 2px;
+  right: 2px;
+  left: 2px;
+  border: dotted 1px rgba(0, 0, 0, 0.5);
+}
+
+.textbox {
+  border: inset 2px;
+  background: #fff;
+  margin: 5px;
+  height: 50px;
+  padding: 2px;
+  font-size: 14px;
+  overflow: auto;
+}
+.textbox:focus {
+  border: inset 2px;
+  outline: none;
+}
+
+.checkbox {
+  font-size: 14px;
+  padding: 5px;
+}
+
+.checkbox:before {
+  display: inline-block;
+  background: #fff;
+  height: 12px;
+  width: 12px;
+  content: "";
+  margin-right: 5px;
+  border: inset 2px;
+  vertical-align: bottom;
+}
+.checked:before {
+  content: "✔";
+  line-height: 14px;
+  font-weight: 800;
+}
+
+.taskbar {
+  position: fixed;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  height: 26px;
+  background: #c0c0c0;
+  border: outset 2px;
+}
+
+.taskbar .start {
+  position: absolute;
+  top: 1px;
+  bottom: 1px;
+  border: outset 2px;
+  font-weight: 600;
+  font-size: 14px;
+  padding: 2px 5px;
+  padding-left: 26px;
+}
+.taskbar .time {
+  position: absolute;
+  top: 1px;
+  bottom: 1px;
+  right: 1px;
+  border: inset 2px;
+  font-size: 14px;
+  padding: 2px 7px;
+}
+.taskbar .start img {
+  position: absolute;
+  top: 3px;
+  bottom: 3px;
+  left: 2px;
+  height: 14px;
+}
+
+.taskbar .task {
+  position: absolute;
+  top: 1px;
+  bottom: 1px;
+  left: 70px;
+  border: outset 2px;
+  font-weight: 600;
+  font-size: 14px;
+  padding: 2px 10px;
+}
+.taskbar .task.active {
+  border: inset 2px;
+}

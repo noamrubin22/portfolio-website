@@ -73,8 +73,31 @@ window.onload = function () {
     menuDisplay(programsMenu);
   });
 
-  // Make the desktop icons draggable
+  // Make a click on the tasks open the pages
+  let projectWindow = document.querySelector(".window");
+  let clickme = document.querySelector(".clickme");
+  let closeme = document.querySelector(".closeme");
 
+  openWindow = false;
+
+  clickme.onclick = function () {
+    console.log("clicked");
+    clickme.classList.toggle("active");
+    // open window
+    projectWindow.hidden = !openWindow;
+    openWindow = !openWindow;
+  };
+
+  closeme.onclick = function () {
+    console.log("closed");
+    clickme.classList.toggle("active");
+    // clickme.classList.toggle("inactive");
+    // close window
+    projectWindow.hidden = true;
+    openWindow = !openWindow;
+  };
+
+  // Make the desktop icons draggable
   var desktopIcons = document.getElementsByClassName("desktop-icon");
 
   for (let i = 0; i < desktopIcons.length; i++) {

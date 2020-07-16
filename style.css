@@ -23,8 +23,8 @@ body {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
 }
 
 .start__button {
@@ -40,8 +40,8 @@ body {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
 .start__button:active {
@@ -63,7 +63,8 @@ body {
 
 .start__logo::after {
   content: "";
-  background: url(https://banner2.kisspng.com/20180821/hrt/kisspng-windows-95-windows-98-microsoft-windows-transparen-windows-95-telegram-stickers-directory-5b7c3cffc178a8.4526616315348687357925.jpg) transparent;
+  background: url(https://banner2.kisspng.com/20180821/hrt/kisspng-windows-95-windows-98-microsoft-windows-transparen-windows-95-telegram-stickers-directory-5b7c3cffc178a8.4526616315348687357925.jpg)
+    transparent;
   background-size: contain;
   mix-blend-mode: multiply;
   top: 0;
@@ -91,8 +92,8 @@ body {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
 .start__time-text {
@@ -127,13 +128,13 @@ body {
   font-weight: bold;
   color: #c3c6cd;
   -webkit-transform: rotate(270deg);
-          transform: rotate(270deg);
+  transform: rotate(270deg);
 }
 
 .start__menu-main-side-text .ninefive {
   color: white;
   -webkit-transform: rotate(270deg);
-          transform: rotate(270deg);
+  transform: rotate(270deg);
   margin-bottom: 56px;
 }
 
@@ -158,8 +159,8 @@ body {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
 .start__menu-main-items-item:hover {
@@ -196,8 +197,8 @@ body {
   border-bottom: 2px solid black;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
   width: 180px;
   left: 156px;
   padding: 0;
@@ -215,8 +216,8 @@ body {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
 .start__menu-sub-items-item:hover {
@@ -250,11 +251,11 @@ body {
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
 .desktop-icon__icon {
@@ -321,7 +322,7 @@ body {
 .bg-img {
   background-image: url(https://i.pinimg.com/originals/96/17/c0/9617c03faeb0986659acd2fa7ff87a26.png);
   -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   width: 200px;
   height: 200px;
   mix-blend-mode: multiply;
@@ -341,5 +342,20 @@ body {
 
 .shutdown-img {
   background-position: 75% 79%;
+}
+
+.task {
+  position: absolute;
+  top: 1px;
+  bottom: 1px;
+  left: 90px;
+  border: outset 2px;
+  font-weight: 600;
+  font-size: 14px;
+  padding: 3px 15px;
+}
+
+.active {
+  border: inset 2px;
 }
 /*# sourceMappingURL=style.css.map */
