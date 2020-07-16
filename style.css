@@ -344,7 +344,18 @@ body {
   background-position: 75% 79%;
 }
 
-.task {
+.contact-task {
+  position: absolute;
+  top: 1px;
+  bottom: 1px;
+  left: 167px;
+  border: outset 2px;
+  font-weight: 600;
+  font-size: 14px;
+  padding: 3px 15px;
+}
+
+.about-task {
   position: absolute;
   top: 1px;
   bottom: 1px;

@@ -74,7 +74,8 @@ window.onload = function () {
   });
 
   // Make a click on the tasks open the pages
-  let projectWindow = document.querySelector(".window");
+  let aboutWindow = document.querySelector(".about-window");
+  let contactWindow = document.querySelector(".contact-window");
   let clickme = document.querySelector(".clickme");
   let closeme = document.querySelector(".closeme");
 
@@ -84,7 +85,7 @@ window.onload = function () {
     console.log("clicked");
     clickme.classList.toggle("active");
     // open window
-    projectWindow.hidden = !openWindow;
+    aboutWindow.hidden = !openWindow;
     openWindow = !openWindow;
   };
 
@@ -93,7 +94,7 @@ window.onload = function () {
     clickme.classList.toggle("active");
     // clickme.classList.toggle("inactive");
     // close window
-    projectWindow.hidden = true;
+    aboutWindow.hidden = true;
     openWindow = !openWindow;
   };
 
@@ -102,6 +103,7 @@ window.onload = function () {
 
   for (let i = 0; i < desktopIcons.length; i++) {
     dragElement(desktopIcons[i]);
+    console.log("hoi");
   }
 
   function dragElement(elmnt) {
@@ -109,6 +111,7 @@ window.onload = function () {
       pos2 = 0,
       pos3 = 0,
       pos4 = 0;
+    console.log("drag");
     elmnt.onmousedown = dragMouseDown;
 
     function dragMouseDown(e) {
