@@ -76,20 +76,24 @@ window.onload = function () {
   // Make a click on the tasks open the pages
   let aboutWindow = document.querySelector(".about-window");
   let contactWindow = document.querySelector(".contact-window");
-  let clickmeAbout = document.querySelector(".clickme-about");
+  let clickmeAbout = document.getElementsByClassName("clickme-about");
+  console.log(clickmeAbout);
   let clickmeContact = document.querySelector(".clickme-contact");
   let closeme = document.querySelector(".closeme");
 
   openAboutWindow = true;
   openContactWindow = true;
 
-  clickmeAbout.onclick = function () {
-    console.log("clicked about");
-    clickmeAbout.classList.toggle("active");
-    // open window
-    aboutWindow.hidden = !openAboutWindow;
-    openAboutWindow = !openAboutWindow;
-  };
+  for (let i = 0; i < clickmeAbout.length; i++) {
+    clickmeAbout[i].onclick = function () {
+      console.log("clicked about");
+
+      clickmeAbout[0].classList.toggle("active");
+      // open window
+      aboutWindow.hidden = !openAboutWindow;
+      openAboutWindow = !openAboutWindow;
+    };
+  }
 
   clickmeContact.onclick = function () {
     console.log("clicked contact");
