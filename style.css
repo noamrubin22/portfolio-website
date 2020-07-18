@@ -111,7 +111,7 @@ body {
   display: none;
   position: absolute;
   bottom: 38px;
-  height: 30%;
+  height: 38%;
 }
 
 .start__menu-main-side {
@@ -386,15 +386,6 @@ body {
   background: #c0c0c0;
 }
 
-.about-window > .content > .textbox.max {
-  border: inset 2px;
-  background: #fff;
-  margin: 5px;
-  height: 517px;
-  padding: 2px;
-  font-size: 14px;
-  overflow: auto;
-}
 /* buttons window */
 .notepad-minimize,
 .notepad-maximize,
@@ -489,11 +480,13 @@ body {
   right: 0px;
 }
 
-.buttons-right {
+/* .buttons-right {
   position: absolute;
   bottom: 5px;
   right: 5px;
-}
+} */
+
+/* textbox content windows */
 .textbox {
   border: inset 2px;
   background: #fff;
@@ -506,4 +499,14 @@ body {
 .textbox:focus {
   border: inset 2px;
   outline: none;
+}
+
+.about-window > .content > .textbox.max {
+  border: inset 2px;
+  background: #fff;
+  margin: 5px;
+  height: 517px;
+  padding: 2px;
+  font-size: 14px;
+  overflow: auto;
 }
