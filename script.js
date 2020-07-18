@@ -76,27 +76,37 @@ window.onload = function () {
   // Make a click on the tasks open the pages
   let aboutWindow = document.querySelector(".about-window");
   let contactWindow = document.querySelector(".contact-window");
-  let clickme = document.querySelector(".clickme");
+  let clickmeAbout = document.querySelector(".clickme-about");
+  let clickmeContact = document.querySelector(".clickme-contact");
   let closeme = document.querySelector(".closeme");
 
-  openWindow = false;
+  openAboutWindow = true;
+  openContactWindow = true;
 
-  clickme.onclick = function () {
-    console.log("clicked");
-    clickme.classList.toggle("active");
+  clickmeAbout.onclick = function () {
+    console.log("clicked about");
+    clickmeAbout.classList.toggle("active");
     // open window
-    aboutWindow.hidden = !openWindow;
-    openWindow = !openWindow;
+    aboutWindow.hidden = !openAboutWindow;
+    openAboutWindow = !openAboutWindow;
   };
 
-  closeme.onclick = function () {
-    console.log("closed");
-    clickme.classList.toggle("active");
-    // clickme.classList.toggle("inactive");
-    // close window
-    aboutWindow.hidden = true;
-    openWindow = !openWindow;
+  clickmeContact.onclick = function () {
+    console.log("clicked contact");
+    clickmeContact.classList.toggle("active");
+    // open window
+    contactWindow.hidden = !openContactWindow;
+    openContactWindow = !openContactWindow;
   };
+
+  // closeme.onclick = function () {
+  //   console.log("closed");
+  //   clickme.classList.toggle("active");
+  //   // clickme.classList.toggle("inactive");
+  //   // close window
+  //   aboutWindow.hidden = true;
+  //   openWindow = !openWindow;
+  // };
 
   // Make the desktop icons draggable
   var desktopIcons = document.getElementsByClassName("desktop-icon");
