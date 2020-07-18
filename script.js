@@ -32,7 +32,6 @@ window.onload = function () {
   setInterval(updateTime, 1000);
 
   // Store the necessary objects
-
   var startButton = document.querySelector(".start__button");
 
   var startMenu = document.querySelector(".start__menu-main");
@@ -77,9 +76,13 @@ window.onload = function () {
   let aboutWindow = document.querySelector(".about-window");
   let contactWindow = document.querySelector(".contact-window");
   let clickmeAbout = document.getElementsByClassName("clickme-about");
-  console.log(clickmeAbout);
+
   let clickmeContact = document.querySelector(".clickme-contact");
   let closeme = document.querySelector(".closeme");
+  let maximize = document.getElementsByClassName("clickme-maximize");
+  console.log(maximize);
+  let textbox = document.getElementsByClassName("textbox");
+  console.log(textbox);
 
   openAboutWindow = true;
   openContactWindow = true;
@@ -103,14 +106,17 @@ window.onload = function () {
     openContactWindow = !openContactWindow;
   };
 
-  // closeme.onclick = function () {
-  //   console.log("closed");
-  //   clickme.classList.toggle("active");
-  //   // clickme.classList.toggle("inactive");
-  //   // close window
-  //   aboutWindow.hidden = true;
-  //   openWindow = !openWindow;
-  // };
+  // maximize window by click
+  let max = false;
+
+  // iterate over the amount of maximized elements and change styling
+  for (let i = 0; i < maximize.length; i++) {
+    maximize[i].onclick = function () {
+      aboutWindow.classList.toggle("max");
+      textbox[i].classList.toggle("max");
+      max = !max;
+    };
+  }
 
   // Make the desktop icons draggable
   var desktopIcons = document.getElementsByClassName("desktop-icon");

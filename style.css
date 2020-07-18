@@ -378,6 +378,23 @@ body {
   background: #c0c0c0;
 }
 
+.about-window.max {
+  width: 796px;
+  height: 558px;
+  border: outset 2px;
+  position: relative;
+  background: #c0c0c0;
+}
+
+.about-window > .content > .textbox.max {
+  border: inset 2px;
+  background: #fff;
+  margin: 5px;
+  height: 517px;
+  padding: 2px;
+  font-size: 14px;
+  overflow: auto;
+}
 /* buttons window */
 .notepad-minimize,
 .notepad-maximize,
@@ -412,20 +429,6 @@ body {
   display: block;
   margin: auto;
   margin-top: 1.2px;
-}
-
-.notepad-exit {
-  padding-left: 3px;
-  padding-right: 3px;
-}
-
-.button-exit {
-  font-size: 102%;
-  margin: 0;
-  text-align: center;
-}
-.icon-exit {
-  font-size: 100%;
 }
 
 .notepad-icon {
