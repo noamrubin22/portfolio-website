@@ -407,6 +407,20 @@ body {
   background: #c0c0c0;
 }
 
+.contact-window {
+  width: 600px;
+  height: 200px;
+  border: outset 2px;
+  position: relative;
+  background: #c0c0c0;
+}
+.contact-window.max {
+  width: 796px;
+  height: 558px;
+  border: outset 2px;
+  position: relative;
+  background: #c0c0c0;
+}
 /* buttons window */
 .notepad-minimize,
 .notepad-maximize,
@@ -522,7 +536,7 @@ body {
   outline: none;
 }
 
-.about-window > .content > .textbox.max {
+.textbox.max {
   border: inset 2px;
   background: #fff;
   margin: 5px;

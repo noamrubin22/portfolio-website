@@ -77,16 +77,19 @@ window.onload = function () {
   let contactWindow = document.querySelector(".contact-window");
   let clickmeAbout = document.getElementsByClassName("clickme-about");
 
-  let clickmeContact = document.querySelector(".clickme-contact");
+  let clickmeContact = document.getElementsByClassName("clickme-contact");
   let closeme = document.querySelector(".closeme");
-  let maximize = document.getElementsByClassName("clickme-maximize");
-  console.log(maximize);
-  let textbox = document.getElementsByClassName("textbox");
-  console.log(textbox);
+  let contactMaximize = document.querySelector(".contact-maximize");
+  let aboutMaximize = document.querySelector(".about-maximize");
+  console.log(aboutMaximize);
+  console.log(contactMaximize);
+  let aboutTextbox = document.querySelector(".textbox-about");
+  let contactTextbox = document.querySelector(".textbox-contact");
 
   openAboutWindow = true;
   openContactWindow = true;
 
+  // make sure that all "about" elements opening the window
   for (let i = 0; i < clickmeAbout.length; i++) {
     clickmeAbout[i].onclick = function () {
       console.log("clicked about");
@@ -98,25 +101,38 @@ window.onload = function () {
     };
   }
 
-  clickmeContact.onclick = function () {
-    console.log("clicked contact");
-    clickmeContact.classList.toggle("active");
-    // open window
-    contactWindow.hidden = !openContactWindow;
-    openContactWindow = !openContactWindow;
-  };
+  // do the same for "contact" elements
+  for (let i = 0; i < clickmeContact.length; i++) {
+    clickmeContact[i].onclick = function () {
+      console.log("clicked about");
 
-  // maximize window by click
-  let max = false;
-
-  // iterate over the amount of maximized elements and change styling
-  for (let i = 0; i < maximize.length; i++) {
-    maximize[i].onclick = function () {
-      aboutWindow.classList.toggle("max");
-      textbox[i].classList.toggle("max");
-      max = !max;
+      clickmeContact[0].classList.toggle("active");
+      // open window
+      contactWindow.hidden = !openContactWindow;
+      openContactWindow = !openContactWindow;
     };
   }
+  // maximizing the windows
+
+  // maximize window by click
+  let maxAbout = false;
+  let maxContact = false;
+
+  // iterate over the amount of maximized elements and change styling from About
+  aboutMaximize.onclick = function () {
+    console.log("maxxxabout");
+    aboutWindow.classList.toggle("max");
+    aboutTextbox.classList.toggle("max");
+    maxAbout = !maxAbout;
+  };
+
+  // same for contact
+  contactMaximize.onclick = function () {
+    console.log("Maxxxcontact");
+    contactWindow.classList.toggle("max");
+    contactTextbox.classList.toggle("max");
+    maxContact = !maxContact;
+  };
 
   // Make the desktop icons draggable
   var desktopIcons = document.getElementsByClassName("desktop-icon");
