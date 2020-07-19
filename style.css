@@ -347,23 +347,44 @@ body {
 .contact-task {
   position: absolute;
   top: 1px;
+  width: 157px;
   bottom: 1px;
-  left: 168px;
+  left: 252px;
   border: outset 2px;
-  font-weight: 600;
+  font-weight: 400;
   font-size: 14px;
-  padding: 3px 15px;
+  /* padding: 3px 15px; */
+  display: flex;
+  align-content: flex-start;
+  align-items: center;
 }
-
+.contact-icon {
+  width: 32px;
+  height: 32px;
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 32 32'%3E%3Cpath d='M7 23L23 7M23 23L7 7M15 26V4M26 15H4' stroke='black' stroke-width='2'/%3E%3Ccircle cx='15' cy='15' r='7'/%3E%3Ccircle cx='13' cy='13' r='2' fill='white'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: center center;
+}
 .about-task {
   position: absolute;
+  width: 157px;
   top: 1px;
   bottom: 1px;
   left: 90px;
   border: outset 2px;
-  font-weight: 600;
+  font-weight: 400;
   font-size: 14px;
-  padding: 3px 15px;
+  display: flex;
+  align-content: flex-start;
+  align-items: center;
+}
+
+.about-icon {
+  width: 32px;
+  height: 32px;
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 32 32'%3E%3Cpath d='M7 23L23 7M23 23L7 7M15 26V4M26 15H4' stroke='black' stroke-width='2'/%3E%3Ccircle cx='15' cy='15' r='7'/%3E%3Ccircle cx='13' cy='13' r='2' fill='white'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: center center;
 }
 
 .active {

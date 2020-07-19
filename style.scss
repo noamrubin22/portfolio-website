@@ -329,3 +329,9 @@ body {
 .shutdown-img {
   background-position: 75% 79%;
 }
+
+.about-icon {
+  width: 32px;
+  height: 32px;
+  @extend %icon;
+}
