@@ -135,15 +135,22 @@ window.onload = function () {
   };
 
   // Make the desktop icons draggable
-  var desktopIcons = document.getElementsByClassName("desktop-icon");
+  let desktopIcons = document.getElementsByClassName("desktop-icon");
 
   for (let i = 0; i < desktopIcons.length; i++) {
     dragElement(desktopIcons[i]);
     console.log("hoi");
   }
 
+  // make windows draggable
+  dragElement(aboutWindow);
+  dragElement(contactWindow);
+
+  let monitorHeight = document.getElementById("monitor").clientHeight;
+  console.log(monitorHeight);
+
   function dragElement(elmnt) {
-    var pos1 = 0,
+    let pos1 = 0,
       pos2 = 0,
       pos3 = 0,
       pos4 = 0;
