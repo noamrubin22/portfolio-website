@@ -146,9 +146,6 @@ window.onload = function () {
   dragElement(aboutWindow);
   dragElement(contactWindow);
 
-  let monitorHeight = document.getElementById("monitor").offsetHeight;
-  let monitorWidth = document.getElementById("monitor").offsetWidth;
-
   function dragElement(elmnt) {
     let pos1 = 0,
       pos2 = 0,
@@ -181,17 +178,25 @@ window.onload = function () {
       elmnt.style.top = elmnt.offsetTop - pos2 + "px";
       elmnt.style.left = elmnt.offsetLeft - pos1 + "px";
       console.log(pos4);
-      // make sure window is limited to monitorsize
-      if (pos4 > 487) {
-        console.log("crossing broders in height");
-        elmnt.style.top = 388 + "px";
-      } else if (pos4 < 95) {
+
+      // define size elements
+      let monitorHeight = document.getElementById("monitor").offsetHeight;
+      let monitorWidth = document.getElementById("monitor").offsetWidth;
+      let startHeight = document.getElementById("start").offsetHeight;
+      let startWidth = document.getElementById("start").offsetWidth;
+      let windowWidth = document.getElementById("window").offsetWidth;
+      let windowHeight = document.getElementById("window").offsetHeight;
+
+      // make sure window is limited to desktopsize
+      if (pos4 > monitorHeight) {
+        elmnt.style.top = monitorHeight - startHeight - windowHeight + "px";
+      } else if (pos4 < windowHeight) {
         elmnt.style.top = 0 + "px";
       }
       if (pos3 > monitorWidth) {
         console.log("crossing borders");
-        elmnt.style.left = 309 + "px";
-      } else if (pos3 < 509) {
+        elmnt.style.left = monitorWidth - windowWidth + "px";
+      } else if (pos3 < windowWidth) {
         console.log("toooo left");
         elmnt.style.left = 0 + "px";
       }
