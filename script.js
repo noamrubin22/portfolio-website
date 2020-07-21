@@ -146,8 +146,8 @@ window.onload = function () {
   dragElement(aboutWindow);
   dragElement(contactWindow);
 
-  let monitorHeight = document.getElementById("monitor").clientHeight;
-  console.log(monitorHeight);
+  let monitorHeight = document.getElementById("monitor").offsetHeight;
+  let monitorWidth = document.getElementById("monitor").offsetWidth;
 
   function dragElement(elmnt) {
     let pos1 = 0,
@@ -180,6 +180,19 @@ window.onload = function () {
       // set the element's new position:
       elmnt.style.top = elmnt.offsetTop - pos2 + "px";
       elmnt.style.left = elmnt.offsetLeft - pos1 + "px";
+      console.log(pos4);
+      // make sure window is limited to monitorsize
+      if (pos4 > monitorHeight) {
+        elmnt.style.top = 390 + "px";
+      } else if (pos4 < 95) {
+        elmnt.style.top = 0 + "px";
+      }
+      if (pos3 > monitorWidth) {
+        elmnt.style.left = 309 + "px";
+      } else if (pos3 < 509) {
+        console.log("toooo left");
+        elmnt.style.left = 0 + "px";
+      }
     }
 
     function closeDragElement() {
