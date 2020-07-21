@@ -183,11 +183,13 @@ window.onload = function () {
       console.log(pos4);
       // make sure window is limited to monitorsize
       if (pos4 > monitorHeight) {
+        console.log("crossing broders in height");
         elmnt.style.top = 388 + "px";
       } else if (pos4 < 95) {
         elmnt.style.top = 0 + "px";
       }
       if (pos3 > monitorWidth) {
+        console.log("crossing borders");
         elmnt.style.left = 309 + "px";
       } else if (pos3 < 509) {
         console.log("toooo left");

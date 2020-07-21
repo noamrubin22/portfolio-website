@@ -411,13 +411,14 @@ body {
   bottom: auto !important;
   border: outset 2px;
   background: #c0c0c0;
+  position: relative;
 }
 
 .contact-window {
   width: 600px;
   height: 200px;
   border: outset 2px;
-  position: relative;
+  position: absolute;
   background: #c0c0c0;
 }
 .contact-window.max {
@@ -428,6 +429,7 @@ body {
   bottom: auto !important;
   border: outset 2px;
   background: #c0c0c0;
+  /* position: relative; */
 }
 /* buttons window */
 .notepad-minimize,
