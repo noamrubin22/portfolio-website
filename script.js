@@ -182,7 +182,7 @@ window.onload = function () {
       elmnt.style.left = elmnt.offsetLeft - pos1 + "px";
       console.log(pos4);
       // make sure window is limited to monitorsize
-      if (pos4 > monitorHeight) {
+      if (pos4 > 487) {
         console.log("crossing broders in height");
         elmnt.style.top = 388 + "px";
       } else if (pos4 < 95) {
