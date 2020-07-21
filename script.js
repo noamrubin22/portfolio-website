@@ -183,7 +183,7 @@ window.onload = function () {
       console.log(pos4);
       // make sure window is limited to monitorsize
       if (pos4 > monitorHeight) {
-        elmnt.style.top = 390 + "px";
+        elmnt.style.top = 388 + "px";
       } else if (pos4 < 95) {
         elmnt.style.top = 0 + "px";
       }

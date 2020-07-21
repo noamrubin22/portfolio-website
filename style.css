@@ -204,7 +204,7 @@ body {
   -ms-flex-direction: column;
   flex-direction: column;
   width: 180px;
-  left: 156px;
+  left: 138px;
   padding: 0;
   display: none;
   position: absolute;
@@ -243,7 +243,7 @@ body {
 }
 
 .sub__programs {
-  bottom: 94px;
+  bottom: 98px;
 }
 
 .desktop-icon {
