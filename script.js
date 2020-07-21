@@ -174,31 +174,34 @@ window.onload = function () {
       pos3 = e.clientX;
       pos4 = e.clientY;
 
-      // set the element's new position:
-      elmnt.style.top = elmnt.offsetTop - pos2 + "px";
-      elmnt.style.left = elmnt.offsetLeft - pos1 + "px";
-      console.log(pos4);
+      // // set the element's new position:
+      // elmnt.style.top = elmnt.offsetTop - pos2 + "px";
+      // elmnt.style.left = elmnt.offsetLeft - pos1 + "px";
 
       // define size elements
       let monitorHeight = document.getElementById("monitor").offsetHeight;
       let monitorWidth = document.getElementById("monitor").offsetWidth;
       let startHeight = document.getElementById("start").offsetHeight;
-      let startWidth = document.getElementById("start").offsetWidth;
       let windowWidth = document.getElementById("window").offsetWidth;
       let windowHeight = document.getElementById("window").offsetHeight;
+      let monitorHeightBorders = document.getElementById("window").clientHeight;
 
       // make sure window is limited to desktopsize
-      if (pos4 > monitorHeight) {
+      if (pos4 > monitorHeight - startHeight - windowHeight) {
         elmnt.style.top = monitorHeight - startHeight - windowHeight + "px";
-      } else if (pos4 < windowHeight) {
+      } else if (pos4 < monitorHeight - monitorHeightBorders) {
         elmnt.style.top = 0 + "px";
+      } else {
+        elmnt.style.top = elmnt.offsetTop - pos2 + "px";
       }
+
       if (pos3 > monitorWidth) {
         console.log("crossing borders");
         elmnt.style.left = monitorWidth - windowWidth + "px";
       } else if (pos3 < windowWidth) {
-        console.log("toooo left");
         elmnt.style.left = 0 + "px";
+      } else {
+        elmnt.style.left = elmnt.offsetLeft - pos1 + "px";
       }
     }
 

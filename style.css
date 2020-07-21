@@ -116,6 +116,8 @@ body {
   position: absolute;
   bottom: 38px;
   height: 38%;
+  /* position: fixed; */
+  z-index: 999;
 }
 
 .start__menu-main-side {
@@ -396,8 +398,8 @@ body {
 }
 
 .about-window {
-  width: 600px;
-  height: 200px;
+  width: 300px;
+  height: 400px;
   border: outset 2px;
   position: relative;
   background: #c0c0c0;
@@ -415,10 +417,11 @@ body {
 }
 
 .contact-window {
-  width: 600px;
-  height: 200px;
+  width: 300px;
+  height: 400px;
   border: outset 2px;
   position: absolute;
+  /* top: 10px; */
   background: #c0c0c0;
 }
 .contact-window.max {
@@ -536,7 +539,7 @@ body {
   border: inset 2px;
   background: #fff;
   margin: 5px;
-  height: 155px;
+  height: 90%;
   padding: 2px;
   font-size: 14px;
   overflow: auto;
