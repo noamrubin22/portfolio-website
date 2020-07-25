@@ -1,15 +1,17 @@
 window.onload = function () {
+  // clobal letiables
   let closemeAbout;
   let aboutTask;
+  let contactTask;
   let aboutWindow;
   let clickmeContact;
   // Update the time box in the start bar every 10 seconds
   function updateTime() {
-    var today = new Date();
-    var hours24 = today.getHours();
-    var hours12;
-    var minutes = today.getMinutes();
-    var suffix = "";
+    let today = new Date();
+    let hours24 = today.getHours();
+    let hours12;
+    let minutes = today.getMinutes();
+    let suffix = "";
 
     // define AM/PM
     if (hours24 >= 12) {
@@ -26,9 +28,9 @@ window.onload = function () {
       minutes = "0" + minutes;
     }
 
-    var time = hours12 + ":" + minutes + suffix;
+    let time = hours12 + ":" + minutes + suffix;
 
-    var timeBox = document.querySelector(".start__time-text");
+    let timeBox = document.querySelector(".start__time-text");
 
     timeBox.innerHTML = time;
   }
@@ -36,20 +38,19 @@ window.onload = function () {
   setInterval(updateTime, 1000);
 
   // Store the necessary objects
-  var startButton = document.querySelector(".start__button");
+  let startButton = document.querySelector(".start__button");
 
-  var startMenu = document.querySelector(".start__menu-main");
+  let startMenu = document.querySelector(".start__menu-main");
 
-  var body = document.querySelector("body");
+  let body = document.querySelector("body");
 
   let programsItem = document.querySelector(".programs");
 
   let programsMenu = document.querySelector(".sub__programs");
 
   // Start menu appear on click of start button and disappear on click of start button or anything else except the menu
-
   body.onclick = function (e) {
-    for (var i = 0, l = e.target.classList.length; i < l; ++i) {
+    for (let i = 0, l = e.target.classList.length; i < l; ++i) {
       if (/start__.*/.test(e.target.classList[i])) {
         break;
       } else {
@@ -82,20 +83,18 @@ window.onload = function () {
   let clickmeAbout = document.getElementsByClassName("clickme-about");
 
   clickmeContact = document.getElementsByClassName("clickme-contact")[0];
-  console.log(clickmeContact);
   closemeAbout = document.querySelector(".closeme-about");
   console.log(closemeAbout);
   let clickAboutMenu = document.querySelector(".about");
-  console.log(clickAboutMenu);
+  let clickContactMenu = document.querySelector(".contact");
   let closemeContact = document.querySelector(".closeme-contact");
+  console.log(closemeContact);
   let contactMaximize = document.querySelector(".contact-maximize");
   let aboutMaximize = document.querySelector(".about-maximize");
   console.log(aboutMaximize);
   console.log(contactMaximize);
   let aboutTextbox = document.querySelector(".textbox-about");
   let contactTextbox = document.querySelector(".textbox-contact");
-  // let contactTask = document.querySelector(".contact-task");
-  // let aboutTask = document.querySelector(".about-task");
 
   openAboutWindow = true;
   openContactWindow = true;
@@ -105,16 +104,18 @@ window.onload = function () {
   // clickmeAbout[0].onclick = function () {
   clickAboutMenu.onclick = function () {
     console.log("clickd menu about");
-    for (let i = 0; i < clickmeAbout.length; i++) {
-      console.log("clicked about");
-      // aboutWindow.hidden = false;
-      aboutWindow.hidden = !openAboutWindow;
-      openAboutWindow = !openAboutWindow;
-      // WRITE A FUNCTION FOR THIS!!!!!
-      // add about task to taskbar
-      // if not existing already
-      createAboutTask();
-    }
+    // activate task
+    // if (aboutTask) {
+    //   aboutTask.classList.toggle("active");
+    // }
+    // for (let i = 0; i < clickmeAbout.length; i++) {
+    console.log("clicked about");
+    // aboutWindow.hidden = false;
+    aboutWindow.hidden = !openAboutWindow;
+    openAboutWindow = !openAboutWindow;
+    // add about task to taskbar
+    createAboutTask();
+    // }
     for (let i = 0; i < clickmeAbout.length; i++) {
       clickmeAbout[i].onclick = function () {
         // open window
@@ -124,41 +125,20 @@ window.onload = function () {
         if (aboutTask) {
           aboutTask.classList.toggle("active");
         }
-        // document
-        //   .getElementsByClassName("about-task")[0]
-        //   .classList.toggle("active");
       };
     }
   };
 
   // do the same for "contact" elements
   // for (let i = 0; i < clickmeContact.length; i++) {
-  clickmeContact.onclick = function () {
+  clickContactMenu.onclick = function () {
     console.log("clicked contact");
-
+    console.log("clickmeContactttt:", clickmeContact);
     // open window
     contactWindow.hidden = !openContactWindow;
     openContactWindow = !openContactWindow;
     // add contact task to taskbar
-    // if not existing already
-    if (!document.getElementsByClassName("contact-task")[0]) {
-      console.log(document.getElementsByClassName("contact-task"));
-      let contactTask = document.createElement("div");
-      let contactIcon = document.createElement("div");
-      contactIcon.classList.add("contact-icon");
-      contactTask.appendChild(contactIcon);
-      let contactContent = document.createTextNode("contact me");
-      contactTask.appendChild(contactContent);
-      contactTask.classList.add("contact-task");
-      contactTask.classList.add("clickme-contact");
-      let parentDiv = document.getElementById("placeholder-tasks").parentNode;
-      let newDiv = document.getElementById("placeholder-tasks");
-      console.log(parentDiv);
-      parentDiv.insertBefore(contactTask, newDiv);
-      document
-        .getElementsByClassName("contact-task")[0]
-        .classList.add("active");
-    }
+    createContactTask();
     for (let i = 0; i < clickmeContact.length; i++) {
       clickmeContact[i].onclick = function () {
         // open window
@@ -166,11 +146,22 @@ window.onload = function () {
         openContactWindow = !openContactWindow;
 
         // activate task
-        document
-          .getElementsByClassName("contact-task")[0]
-          .classList.toggle("active");
+        if (contactTask) {
+          contactTask.classList.toggle("active");
+        }
       };
     }
+  };
+
+  // close window
+  closemeContact.onclick = function () {
+    contactTask.remove();
+    contactWindow.hidden = true;
+    console.log("CLOSE CONTACT");
+    clickContactMenu.onclick = function () {
+      createContactTask();
+      contactWindow.hidden = false;
+    };
   };
   // close window
   closemeAbout.onclick = function () {
@@ -296,6 +287,28 @@ window.onload = function () {
       console.log(newDiv);
       parentDiv.insertBefore(aboutTask, newDiv);
       document.getElementsByClassName("about-task")[0].classList.add("active");
+    }
+  }
+
+  function createContactTask() {
+    // if not existing already
+    if (!document.getElementsByClassName("contact-task")[0]) {
+      console.log(document.getElementsByClassName("contact-task"));
+      contactTask = document.createElement("div");
+      let contactIcon = document.createElement("div");
+      contactIcon.classList.add("contact-icon");
+      contactTask.appendChild(contactIcon);
+      let contactContent = document.createTextNode("contact me");
+      contactTask.appendChild(contactContent);
+      contactTask.classList.add("contact-task");
+      contactTask.classList.add("clickme-contact");
+      let parentDiv = document.getElementById("placeholder-tasks").parentNode;
+      let newDiv = document.getElementById("placeholder-tasks");
+      console.log(parentDiv);
+      parentDiv.insertBefore(contactTask, newDiv);
+      document
+        .getElementsByClassName("contact-task")[0]
+        .classList.add("active");
     }
   }
 };
