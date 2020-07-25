@@ -1,4 +1,8 @@
 window.onload = function () {
+  let closemeAbout;
+  let aboutTask;
+  let aboutWindow;
+  let clickmeContact;
   // Update the time box in the start bar every 10 seconds
   function updateTime() {
     var today = new Date();
@@ -73,12 +77,17 @@ window.onload = function () {
   });
 
   // Make a click on the tasks open the pages
-  let aboutWindow = document.querySelector(".about-window");
+  aboutWindow = document.querySelector(".about-window");
   let contactWindow = document.querySelector(".contact-window");
   let clickmeAbout = document.getElementsByClassName("clickme-about");
 
-  let clickmeContact = document.getElementsByClassName("clickme-contact");
-  let closeme = document.querySelector(".closeme");
+  clickmeContact = document.getElementsByClassName("clickme-contact")[0];
+  console.log(clickmeContact);
+  closemeAbout = document.querySelector(".closeme-about");
+  console.log(closemeAbout);
+  let clickAboutMenu = document.querySelector(".about");
+  console.log(clickAboutMenu);
+  let closemeContact = document.querySelector(".closeme-contact");
   let contactMaximize = document.querySelector(".contact-maximize");
   let aboutMaximize = document.querySelector(".about-maximize");
   console.log(aboutMaximize);
@@ -92,29 +101,19 @@ window.onload = function () {
   openContactWindow = true;
 
   // make sure that all "about" elements opening the window
-  // for (let i = 0; i < clickmeAbout.length; i++) {
-  console.log(clickmeAbout[0]);
-  clickmeAbout[0].onclick = function () {
-    console.log("clicked about");
-    aboutWindow.hidden = !openAboutWindow;
-    openAboutWindow = !openAboutWindow;
-    // WRITE A FUNCTION FOR THIS!!!!!
-    // add about task to taskbar
-    // if not existing already
-    if (!document.getElementsByClassName("about-task")[0]) {
-      let aboutTask = document.createElement("div");
-      let aboutIcon = document.createElement("div");
-      aboutIcon.classList.add("about-icon");
-      aboutTask.appendChild(aboutIcon);
-      let aboutContent = document.createTextNode("about.txt - Notepad");
-      aboutTask.appendChild(aboutContent);
-      aboutTask.classList.add("about-task");
-      aboutTask.classList.add("clickme-about");
-      let parentDiv = document.getElementById("placeholder-tasks").parentNode;
-      let newDiv = document.getElementById("placeholder-tasks");
-      console.log(newDiv);
-      parentDiv.insertBefore(aboutTask, newDiv);
-      document.getElementsByClassName("about-task")[0].classList.add("active");
+
+  // clickmeAbout[0].onclick = function () {
+  clickAboutMenu.onclick = function () {
+    console.log("clickd menu about");
+    for (let i = 0; i < clickmeAbout.length; i++) {
+      console.log("clicked about");
+      // aboutWindow.hidden = false;
+      aboutWindow.hidden = !openAboutWindow;
+      openAboutWindow = !openAboutWindow;
+      // WRITE A FUNCTION FOR THIS!!!!!
+      // add about task to taskbar
+      // if not existing already
+      createAboutTask();
     }
     for (let i = 0; i < clickmeAbout.length; i++) {
       clickmeAbout[i].onclick = function () {
@@ -122,18 +121,21 @@ window.onload = function () {
         aboutWindow.hidden = !openAboutWindow;
         openAboutWindow = !openAboutWindow;
         // activate task
-        document
-          .getElementsByClassName("about-task")[0]
-          .classList.toggle("active");
+        if (aboutTask) {
+          aboutTask.classList.toggle("active");
+        }
+        // document
+        //   .getElementsByClassName("about-task")[0]
+        //   .classList.toggle("active");
       };
     }
   };
-  // }
 
   // do the same for "contact" elements
   // for (let i = 0; i < clickmeContact.length; i++) {
-  clickmeContact[0].onclick = function () {
+  clickmeContact.onclick = function () {
     console.log("clicked contact");
+
     // open window
     contactWindow.hidden = !openContactWindow;
     openContactWindow = !openContactWindow;
@@ -170,8 +172,17 @@ window.onload = function () {
       };
     }
   };
+  // close window
+  closemeAbout.onclick = function () {
+    aboutTask.remove();
+    aboutWindow.hidden = true;
+    console.log("CLOSE ABOUT");
+    clickAboutMenu.onclick = function () {
+      createAboutTask();
+      aboutWindow.hidden = false;
+    };
+  };
   // maximizing the windows
-
   // maximize window by click
   let maxAbout = false;
   let maxContact = false;
@@ -267,6 +278,24 @@ window.onload = function () {
       // stop moving when mouse button is released:
       document.onmouseup = null;
       document.onmousemove = null;
+    }
+  }
+  function createAboutTask() {
+    if (!document.querySelector(".about-task")) {
+      console.log("about is not there and we are creating it now");
+      aboutTask = document.createElement("div");
+      let aboutIcon = document.createElement("div");
+      aboutIcon.classList.add("about-icon");
+      aboutTask.appendChild(aboutIcon);
+      let aboutContent = document.createTextNode("about.txt - Notepad");
+      aboutTask.appendChild(aboutContent);
+      aboutTask.classList.add("about-task");
+      aboutTask.classList.add("clickme-about");
+      let parentDiv = document.getElementById("placeholder-tasks").parentNode;
+      let newDiv = document.getElementById("placeholder-tasks");
+      console.log(newDiv);
+      parentDiv.insertBefore(aboutTask, newDiv);
+      document.getElementsByClassName("about-task")[0].classList.add("active");
     }
   }
 };
