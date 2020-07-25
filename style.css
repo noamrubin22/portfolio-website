@@ -514,6 +514,12 @@ body {
   color: black;
 }
 
+.icon-exit {
+  position: absolute;
+  top: 0;
+  right: 0.35rem;
+}
+
 .icon-maximize {
   border-bottom: 1px solid black;
   border-top: 3px solid black;
