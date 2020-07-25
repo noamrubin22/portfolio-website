@@ -85,6 +85,8 @@ window.onload = function () {
   console.log(contactMaximize);
   let aboutTextbox = document.querySelector(".textbox-about");
   let contactTextbox = document.querySelector(".textbox-contact");
+  // let contactTask = document.querySelector(".contact-task");
+  // let aboutTask = document.querySelector(".about-task");
 
   openAboutWindow = true;
   openContactWindow = true;
@@ -94,7 +96,7 @@ window.onload = function () {
     clickmeAbout[i].onclick = function () {
       console.log("clicked about");
 
-      clickmeAbout[0].classList.toggle("active");
+      // aboutTask.classList.toggle("active");
 
       // WRITE A FUNCTION FOR THIS!!!!!
       // add about task to taskbar
@@ -118,16 +120,18 @@ window.onload = function () {
       // open window
       aboutWindow.hidden = !openAboutWindow;
       openAboutWindow = !openAboutWindow;
+
+      // activate task
+      document
+        .getElementsByClassName("about-task")[0]
+        .classList.toggle("active");
     };
   }
 
   // do the same for "contact" elements
   for (let i = 0; i < clickmeContact.length; i++) {
     clickmeContact[i].onclick = function () {
-      console.log("clicked about");
-
-      clickmeContact[0].classList.toggle("active");
-
+      console.log("clicked contact");
       // add contact task to taskbar
       // if not existing already
       if (!document.getElementsByClassName("contact-task")[0]) {
@@ -149,6 +153,11 @@ window.onload = function () {
       // open window
       contactWindow.hidden = !openContactWindow;
       openContactWindow = !openContactWindow;
+
+      // activate task
+      document
+        .getElementsByClassName("contact-task")[0]
+        .classList.toggle("active");
     };
   }
   // maximizing the windows
