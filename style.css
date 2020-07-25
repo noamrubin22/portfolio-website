@@ -16,6 +16,10 @@ body {
   overflow: hidden;
 }
 
+.left-sided {
+  width: 100%;
+}
+
 .start {
   position: absolute;
   bottom: 0;
@@ -26,13 +30,16 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  /* flex-direction: row; */
+  align-content: flex-start;
   -webkit-box-pack: justify;
   -ms-flex-pack: justify;
   justify-content: space-between;
+  /* flex-wrap: wrap; */
 }
 
 .start__button {
-  width: 80px;
+  width: 20%;
   height: 72%;
   background: #c3c6cd;
   border-top: 2px solid #deebf3;
@@ -83,6 +90,12 @@ body {
   font-weight: bold;
 }
 
+.tasks {
+  width: 80%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
 .start__time {
   width: 80px;
   height: 72%;
@@ -206,7 +219,7 @@ body {
   -ms-flex-direction: column;
   flex-direction: column;
   width: 180px;
-  left: 138px;
+  left: 100%;
   padding: 0;
   display: none;
   position: absolute;
@@ -351,11 +364,11 @@ body {
 }
 
 .contact-task {
-  position: absolute;
+  /* position: absolute; */
   top: 1px;
   width: 157px;
   bottom: 1px;
-  left: 252px;
+  /* left: 252px; */
   border: outset 2px;
   font-weight: 400;
   font-size: 14px;
@@ -372,11 +385,11 @@ body {
   background-position: center center;
 }
 .about-task {
-  position: absolute;
+  /* position: absolute; */
   width: 157px;
   top: 1px;
   bottom: 1px;
-  left: 90px;
+  /* left: 90px; */
   border: outset 2px;
   font-weight: 400;
   font-size: 14px;

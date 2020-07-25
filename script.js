@@ -68,7 +68,7 @@ window.onload = function () {
     menuDisplay(startMenu);
   });
 
-  programsItem.addEventListener("click", function () {
+  programsItem.addEventListener("mouseover", function () {
     menuDisplay(programsMenu);
   });
 
@@ -95,6 +95,26 @@ window.onload = function () {
       console.log("clicked about");
 
       clickmeAbout[0].classList.toggle("active");
+
+      // WRITE A FUNCTION FOR THIS!!!!!
+      // add about task to taskbar
+      // if not existing already
+      if (!document.getElementsByClassName("about-task")[0]) {
+        console.log(document.getElementsByClassName("about-task"));
+        let aboutTask = document.createElement("div");
+        let aboutIcon = document.createElement("div");
+        aboutIcon.classList.add("about-icon");
+        aboutTask.appendChild(aboutIcon);
+        let aboutContent = document.createTextNode("about.txt - Notepad");
+        aboutTask.appendChild(aboutContent);
+        aboutTask.classList.add("about-task");
+        aboutTask.classList.add("clickme-about");
+        let parentDiv = document.getElementById("placeholder-tasks").parentNode;
+        let newDiv = document.getElementById("placeholder-tasks");
+        console.log(newDiv);
+        parentDiv.insertBefore(aboutTask, newDiv);
+      }
+
       // open window
       aboutWindow.hidden = !openAboutWindow;
       openAboutWindow = !openAboutWindow;
@@ -107,6 +127,25 @@ window.onload = function () {
       console.log("clicked about");
 
       clickmeContact[0].classList.toggle("active");
+
+      // add contact task to taskbar
+      // if not existing already
+      if (!document.getElementsByClassName("contact-task")[0]) {
+        console.log(document.getElementsByClassName("contact-task"));
+        let contactTask = document.createElement("div");
+        let contactIcon = document.createElement("div");
+        contactIcon.classList.add("contact-icon");
+        contactTask.appendChild(contactIcon);
+        let contactContent = document.createTextNode("contact me");
+        contactTask.appendChild(contactContent);
+        contactTask.classList.add("contact-task");
+        contactTask.classList.add("clickme-contact");
+        let parentDiv = document.getElementById("placeholder-tasks").parentNode;
+        let newDiv = document.getElementById("placeholder-tasks");
+        console.log(parentDiv);
+        parentDiv.insertBefore(contactTask, newDiv);
+      }
+
       // open window
       contactWindow.hidden = !openContactWindow;
       openContactWindow = !openContactWindow;
