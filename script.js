@@ -82,7 +82,7 @@ window.onload = function () {
   let contactWindow = document.querySelector(".contact-window");
   let clickmeAbout = document.getElementsByClassName("clickme-about");
 
-  clickmeContact = document.getElementsByClassName("clickme-contact")[0];
+  clickmeContact = document.getElementsByClassName("clickme-contact");
   closemeAbout = document.querySelector(".closeme-about");
   console.log(closemeAbout);
   let clickAboutMenu = document.querySelector(".about");
@@ -130,37 +130,43 @@ window.onload = function () {
   };
 
   // do the same for "contact" elements
-  // for (let i = 0; i < clickmeContact.length; i++) {
-  clickContactMenu.onclick = function () {
-    console.log("clicked contact");
-    console.log("clickmeContactttt:", clickmeContact);
-    // open window
-    contactWindow.hidden = !openContactWindow;
-    openContactWindow = !openContactWindow;
-    // add contact task to taskbar
-    createContactTask();
-    for (let i = 0; i < clickmeContact.length; i++) {
-      clickmeContact[i].onclick = function () {
-        // open window
-        contactWindow.hidden = !openContactWindow;
-        openContactWindow = !openContactWindow;
+  // if menu item "contact" is clicked
+  clickContact();
+  function clickContact() {
+    clickContactMenu.onclick = function () {
+      console.log("clicked contact");
+      // open window
+      contactWindow.hidden = !openContactWindow;
+      openContactWindow = !openContactWindow;
+      // add contact task to taskbar
+      createContactTask();
+      console.log("clickMECONTACT", clickmeContact);
+      clickmeContact = document.getElementsByClassName("clickme-contact");
+      for (let i = 0; i < clickmeContact.length; i++) {
+        clickmeContact[i].onclick = function () {
+          // open window
+          contactWindow.hidden = !openContactWindow;
+          openContactWindow = !openContactWindow;
 
-        // activate task
-        if (contactTask) {
-          contactTask.classList.toggle("active");
-        }
-      };
-    }
-  };
+          // activate task
+          if (contactTask) {
+            contactTask.classList.toggle("active");
+          }
+        };
+      }
+    };
+  }
 
   // close window
   closemeContact.onclick = function () {
     contactTask.remove();
+    clickmeContact = document.getElementsByClassName("clickme-contact");
     contactWindow.hidden = true;
     console.log("CLOSE CONTACT");
     clickContactMenu.onclick = function () {
       createContactTask();
       contactWindow.hidden = false;
+      clickContact();
     };
   };
   // close window
@@ -288,12 +294,17 @@ window.onload = function () {
       parentDiv.insertBefore(aboutTask, newDiv);
       document.getElementsByClassName("about-task")[0].classList.add("active");
     }
+    // make sure taskbar is still responsive
+    aboutTask.onclick = function () {
+      aboutWindow.hidden = !openAboutWindow;
+      openAboutWindow = !openAboutWindow;
+      aboutTask.classList.toggle("active");
+    };
   }
 
   function createContactTask() {
     // if not existing already
     if (!document.getElementsByClassName("contact-task")[0]) {
-      console.log(document.getElementsByClassName("contact-task"));
       contactTask = document.createElement("div");
       let contactIcon = document.createElement("div");
       contactIcon.classList.add("contact-icon");
@@ -310,5 +321,11 @@ window.onload = function () {
         .getElementsByClassName("contact-task")[0]
         .classList.add("active");
     }
+    // make sure taskbar is still responsive
+    contactTask.onclick = function () {
+      contactWindow.hidden = !openContactWindow;
+      openContactWindow = !openContactWindow;
+      contactTask.classList.toggle("active");
+    };
   }
 };
