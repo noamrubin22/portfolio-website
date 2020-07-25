@@ -453,6 +453,22 @@ body {
   display: flex;
   flex-direction: row;
 }
+
+.sidebar {
+  height: 27px;
+  width: 2px;
+  margin: 2px;
+  /* background-color: rgb(163, 160, 160); */
+  /* border: 0.5px solid grey; */
+  border: outset 2px;
+}
+
+.stripe {
+  height: 100%;
+  width: 1px;
+  border: inset 1px;
+  /* margin-right: 0.4rem; */
+}
 .github-icon {
   width: 32px;
   height: 32px;
