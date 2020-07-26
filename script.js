@@ -1,10 +1,11 @@
 window.onload = function () {
-  // clobal letiables
+  // global variables
   let closemeAbout;
   let aboutTask;
   let contactTask;
   let aboutWindow;
   let clickmeContact;
+  let closemeMariposa;
   // Update the time box in the start bar every 10 seconds
   function updateTime() {
     let today = new Date();
@@ -60,7 +61,6 @@ window.onload = function () {
   };
 
   // Show/hide menu on click
-
   function menuDisplay(menu) {
     if (menu.classList.contains("menu-open")) {
       menu.classList.remove("menu-open");
@@ -73,7 +73,11 @@ window.onload = function () {
     menuDisplay(startMenu);
   });
 
-  programsItem.addEventListener("mouseover", function () {
+  // programsItem.addEventListener("mouseover", function () {
+  //   menuDisplay(programsMenu);
+
+  // });
+  programsItem.addEventListener("click", function () {
     menuDisplay(programsMenu);
   });
 
@@ -200,13 +204,35 @@ window.onload = function () {
     maxContact = !maxContact;
   };
 
+  // Projects-pages
+  // MARIPOSA
+  // locate elements
+  let mariposaProject = document.getElementsByClassName("mariposa-project")[0];
+  let mariposaDesktop = document.querySelector(".mariposa");
+  let mariposaMenu = document.querySelector(".mariposa-menu");
+  closemeMariposa = document.querySelector(".closeme-mariposa");
+  let mariposaMaximize = document.querySelector(".mariposa-maximize");
+  let clickmeMariposa = document.getElementsByClassName("clickme-mariposa");
+
+  // open project when doubleclick on desktop icon
+  mariposaDesktop.addEventListener("dblclick", function () {
+    openMariposa();
+  });
+
+  // open project when clicked through submenu
+  mariposaMenu.addEventListener("click", function () {
+    openMariposa();
+  });
+
+  // DRAGGABLE
   // Make the desktop icons draggable
   let desktopIcons = document.getElementsByClassName("desktop-icon");
 
   for (let i = 0; i < desktopIcons.length; i++) {
     dragElement(desktopIcons[i]);
-    console.log("hoi");
   }
+  // make projects draggable
+  dragElement(mariposaProject);
 
   // make windows draggable
   dragElement(aboutWindow);
@@ -240,35 +266,35 @@ window.onload = function () {
       pos3 = e.clientX;
       pos4 = e.clientY;
 
-      // // set the element's new position:
-      // elmnt.style.top = elmnt.offsetTop - pos2 + "px";
-      // elmnt.style.left = elmnt.offsetLeft - pos1 + "px";
+      // set the element's new position:
+      elmnt.style.top = elmnt.offsetTop - pos2 + "px";
+      elmnt.style.left = elmnt.offsetLeft - pos1 + "px";
 
       // define size elements
-      let monitorHeight = document.getElementById("monitor").offsetHeight;
-      let monitorWidth = document.getElementById("monitor").offsetWidth;
-      let startHeight = document.getElementById("start").offsetHeight;
-      let windowWidth = document.getElementById("window").offsetWidth;
-      let windowHeight = document.getElementById("window").offsetHeight;
-      let monitorHeightBorders = document.getElementById("window").clientHeight;
+      // let monitorHeight = document.getElementById("monitor").offsetHeight;
+      // let monitorWidth = document.getElementById("monitor").offsetWidth;
+      // let startHeight = document.getElementById("start").offsetHeight;
+      // let windowWidth = document.getElementById("window").offsetWidth;
+      // let windowHeight = document.getElementById("window").offsetHeight;
+      // let monitorHeightBorders = document.getElementById("window").clientHeight;
 
       // make sure window is limited to desktopsize
-      if (pos4 > monitorHeight - startHeight - windowHeight) {
-        elmnt.style.top = monitorHeight - startHeight - windowHeight + "px";
-      } else if (pos4 < monitorHeight - monitorHeightBorders) {
-        elmnt.style.top = 0 + "px";
-      } else {
-        elmnt.style.top = elmnt.offsetTop - pos2 + "px";
-      }
+      // if (pos4 > monitorHeight - startHeight - windowHeight) {
+      //   elmnt.style.top = monitorHeight - startHeight - windowHeight + "px";
+      // } else if (pos4 < monitorHeight - monitorHeightBorders) {
+      //   elmnt.style.top = 0 + "px";
+      // } else {
+      //   elmnt.style.top = elmnt.offsetTop - pos2 + "px";
+      // }
 
-      if (pos3 > monitorWidth) {
-        console.log("crossing borders");
-        elmnt.style.left = monitorWidth - windowWidth + "px";
-      } else if (pos3 < windowWidth) {
-        elmnt.style.left = 0 + "px";
-      } else {
-        elmnt.style.left = elmnt.offsetLeft - pos1 + "px";
-      }
+      // if (pos3 > monitorWidth) {
+      //   console.log("crossing borders");
+      //   elmnt.style.left = monitorWidth - windowWidth + "px";
+      // } else if (pos3 < windowWidth) {
+      //   elmnt.style.left = 0 + "px";
+      // } else {
+      //   elmnt.style.left = elmnt.offsetLeft - pos1 + "px";
+      // }
     }
 
     function closeDragElement() {
@@ -327,5 +353,92 @@ window.onload = function () {
       openContactWindow = !openContactWindow;
       contactTask.classList.toggle("active");
     };
+  }
+
+  function openMariposa() {
+    // change color desktop icon
+    mariposaDesktop.style.backgroundColor = "#00207d";
+    setInterval(function () {
+      mariposaDesktop.style.backgroundColor = "transparent";
+    }, 300);
+
+    // open project window
+    mariposaProject.hidden = false;
+    openMariposaProject = true;
+    // add Mariposa to taskbar
+    createMariposaTask();
+
+    // make sure all right-side buttons work
+    closeMariposa();
+    maxMariposa();
+    openMinimizeMariposa();
+
+    function createMariposaTask() {
+      if (!document.querySelector(".mariposa-task")) {
+        console.log("mariposa is not there and we are creating it now");
+        mariposaTask = document.createElement("div");
+        let mariposaIcon = document.createElement("div");
+        mariposaIcon.classList.add("mariposa-icon");
+        mariposaTask.appendChild(mariposaIcon);
+        let mariposaContent = document.createTextNode("mariposa.txt - Notepad");
+        mariposaTask.appendChild(mariposaContent);
+        mariposaTask.classList.add("mariposa-task");
+        mariposaTask.classList.add("clickme-mariposa");
+        let parentDiv = document.getElementById("placeholder-tasks").parentNode;
+        let newDiv = document.getElementById("placeholder-tasks");
+        console.log(newDiv);
+        parentDiv.insertBefore(mariposaTask, newDiv);
+        document
+          .getElementsByClassName("mariposa-task")[0]
+          .classList.add("active");
+      }
+      // make sure taskbar is still responsive
+      mariposaTask.onclick = function () {
+        mariposaProject.hidden = !openMariposaProject;
+        openMariposaProject = !openMariposaProject;
+        mariposaTask.classList.toggle("active");
+      };
+    }
+
+    function closeMariposa() {
+      // close window
+      closemeMariposa.onclick = function () {
+        mariposaTask.remove();
+        clickmeMariposa = document.getElementsByClassName("clickme-mariposa");
+        mariposaProject.hidden = true;
+        console.log("CLOSE Mariposa");
+        clickmeMariposa.onclick = function () {
+          createMariposaTask();
+          MariposaProject.hidden = false;
+          clickmeMariposa();
+        };
+      };
+    }
+
+    function maxMariposa() {
+      console.log(mariposaMaximize);
+      let maxMariposa = false;
+      mariposaMaximize.onclick = function () {
+        console.log("MAXXXXXX");
+        mariposaProject.classList.toggle("max");
+        // mariposaTextbox.classList.toggle("max");
+        maxMariposa = !maxMariposa;
+      };
+    }
+
+    function openMinimizeMariposa() {
+      // project is minized/opened when clicked on on the minimize button or task
+      for (let i = 0; i < clickmeMariposa.length; i++) {
+        clickmeMariposa[i].onclick = function () {
+          // open window
+          mariposaProject.hidden = !openMariposaProject;
+          openMariposaProject = !openMariposaProject;
+          // change styling task
+          if (mariposaTask) {
+            mariposaTask.classList.toggle("active");
+          }
+        };
+      }
+    }
   }
 };
