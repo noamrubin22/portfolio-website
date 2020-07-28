@@ -24,6 +24,15 @@ window.onload = function () {
 
   let shutDown = document.querySelector(".shutdown");
 
+  // show screensaver after if mouse is not moving for 1 min
+  var timeout;
+  document.onmousemove = function () {
+    clearTimeout(timeout);
+    timeout = setTimeout(function () {
+      screenSaver.hidden = false;
+    }, 60000);
+  };
+
   // hide screensaver on move
   screenSaver.addEventListener("mousemove", function () {
     screenSaver.hidden = true;
@@ -35,9 +44,9 @@ window.onload = function () {
   });
 
   // activate screensaver if mouse is not used for more than 5 min
-  body.addEventListener("mousemoveend", function () {
-    console.log("mouse is not moving");
-  });
+  // let moved = true;
+  // if screensaver is hidden
+  // and mouse moved
 
   // Start menu appear on click of start button and disappear on click of start button or anything else except the menu
   body.onclick = function (e) {
