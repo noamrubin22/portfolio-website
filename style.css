@@ -48,7 +48,7 @@ body {
 }
 
 .start__button {
-  width: 15%;
+  width: 9%;
   height: 72%;
   background: #c3c6cd;
   border-top: 2px solid #deebf3;
@@ -100,7 +100,7 @@ body {
 }
 
 .tasks {
-  width: 80%;
+  width: 90%;
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
@@ -192,7 +192,7 @@ body {
 }
 
 .start__menu-main-items-item:hover {
-  background: #00207d;
+  background: purple;
 }
 
 .start__menu-main-items-item:hover .start__menu-main-items-item-title {
@@ -249,7 +249,7 @@ body {
 }
 
 .start__menu-sub-items-item:hover {
-  background: #00207d;
+  background: purple;
 }
 
 .start__menu-sub-items-item:hover .start__menu-sub-items-item-title {
@@ -296,6 +296,7 @@ body {
   margin-top: 12px;
   margin-left: 12px;
   margin-bottom: 0;
+  text-align: center;
 }
 
 .desktop-icon:hover {
@@ -340,24 +341,24 @@ body {
   top: 0px;
   left: 10px;
 }
-.music-vis {
-  top: 230px;
-  left: 20px;
-}
 .gerrit {
-  top: 120px;
-  left: 10px;
+  top: 140px;
+  left: 14px;
 }
-
-.singing-robot {
-  top: 120px;
-  left: 130px;
+.music-vis {
+  top: 270px;
+  left: 20px;
 }
 
 .spotavibe {
   top: 10px;
-  left: 130px;
+  left: 140px;
 }
+.singing-robot {
+  top: 140px;
+  left: 140px;
+}
+
 .recycle__icon {
   width: 53px;
   background: url("./images/Gerrit_01.png");
@@ -546,7 +547,7 @@ img {
 #linkedin-icon:hover,
 #email-icon:hover {
   cursor: pointer;
-  background: #00207d;
+  background: purple;
 }
 .linkedin-icon,
 .email-icon {
