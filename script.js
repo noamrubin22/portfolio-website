@@ -25,26 +25,28 @@ window.onload = function () {
 
   let shutDown = document.querySelector(".shutdown");
   screenSaver.hidden = true;
+
   // SCREENSAVER
-  // show screensaver after if mouse is not moving for 2 min
-  // var timeout;
-  // document.onmousemove = function () {
-  //   clearTimeout(timeout);
-  //   timeout = setTimeout(function () {
-  //     screenSaver.hidden = false;
-  //   }, 120000);
-  // };
+  //show screensaver after if mouse is not moving for 2 min
+  var timeout;
+  document.onmousemove = function () {
+    clearTimeout(timeout);
+    timeout = setTimeout(function () {
+      screenSaver.hidden = false;
+    }, 120000);
+  };
 
-  // // hide screensaver on move
-  // screenSaver.addEventListener("mousemove", function () {
-  //   screenSaver.hidden = true;
-  // });
+  // hide screensaver on move
+  screenSaver.addEventListener("mousemove", function () {
+    screenSaver.hidden = true;
+  });
 
-  // // activate screensaver on click of shut down computer
-  // shutDown.addEventListener("click", function () {
-  //   screenSaver.hidden = false;
-  // });
+  // activate screensaver on click of shut down computer
+  shutDown.addEventListener("click", function () {
+    screenSaver.hidden = false;
+  });
 
+  // STARTMENU
   // Start menu appear on click of start button and disappear on click of start button or anything else except the menu
   body.onclick = function (e) {
     for (let i = 0, l = e.target.classList.length; i < l; ++i) {
@@ -69,10 +71,6 @@ window.onload = function () {
     menuDisplay(startMenu);
   });
 
-  // programsItem.addEventListener("mouseover", function () {
-  //   menuDisplay(programsMenu);
-
-  // });
   programsItem.addEventListener("click", function () {
     menuDisplay(programsMenu);
   });
@@ -98,10 +96,6 @@ window.onload = function () {
 
   openAboutWindow = true;
   openContactWindow = true;
-
-  // if (openContactWindow) {
-  //   starField();
-  // }
 
   // make sure that all "about" elements opening the window
 
