@@ -302,10 +302,10 @@ body {
   cursor: pointer;
 }
 
-.computer {
+/* .computer {
   top: 20px;
   left: 10px;
-}
+} */
 
 .computer__icon {
   width: 55px;
@@ -315,18 +315,49 @@ body {
   /* background-size: contain; */
 }
 
+/* desktop icons */
 #mariposa-icon {
   width: 75px;
 }
 #gerrit-icon {
   width: 67px;
+  z-index: 2;
 }
 
-.recycle {
+#tibet-robot-icon {
+  width: 63px;
+}
+
+#muvi-icon {
+  width: 58px;
+}
+
+#spotavibe-icon {
+  width: 67px;
+}
+
+.mariposa {
+  top: 0px;
+  left: 10px;
+}
+.music-vis {
+  top: 230px;
+  left: 20px;
+}
+.gerrit {
   top: 120px;
   left: 10px;
 }
 
+.singing-robot {
+  top: 120px;
+  left: 130px;
+}
+
+.spotavibe {
+  top: 10px;
+  left: 130px;
+}
 .recycle__icon {
   width: 53px;
   background: url("./images/Gerrit_01.png");
@@ -533,6 +564,7 @@ img {
   border: outset 2px;
   position: relative;
   background: #c0c0c0;
+  /* z-index: 100; */
 }
 
 .mariposa-project.max {
@@ -544,6 +576,7 @@ img {
   border: outset 2px;
   background: #c0c0c0;
   position: relative;
+  /* z-index: 100; */
 }
 /* buttons window */
 .notepad-minimize,

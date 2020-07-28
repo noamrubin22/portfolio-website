@@ -7,6 +7,7 @@ window.onload = function () {
   let clickmeContact;
   let closemeMariposa;
 
+  // clock should be correct
   setInterval(updateTime, 1000);
 
   // Store the necessary objects
@@ -23,25 +24,26 @@ window.onload = function () {
   let screenSaver = document.getElementById("screensaver");
 
   let shutDown = document.querySelector(".shutdown");
+  screenSaver.hidden = true;
+  // SCREENSAVER
+  // show screensaver after if mouse is not moving for 2 min
+  // var timeout;
+  // document.onmousemove = function () {
+  //   clearTimeout(timeout);
+  //   timeout = setTimeout(function () {
+  //     screenSaver.hidden = false;
+  //   }, 120000);
+  // };
 
-  // show screensaver after if mouse is not moving for 1 min
-  var timeout;
-  document.onmousemove = function () {
-    clearTimeout(timeout);
-    timeout = setTimeout(function () {
-      screenSaver.hidden = false;
-    }, 60000);
-  };
+  // // hide screensaver on move
+  // screenSaver.addEventListener("mousemove", function () {
+  //   screenSaver.hidden = true;
+  // });
 
-  // hide screensaver on move
-  screenSaver.addEventListener("mousemove", function () {
-    screenSaver.hidden = true;
-  });
-
-  // activate screensaver on click of shut down computer
-  shutDown.addEventListener("click", function () {
-    screenSaver.hidden = false;
-  });
+  // // activate screensaver on click of shut down computer
+  // shutDown.addEventListener("click", function () {
+  //   screenSaver.hidden = false;
+  // });
 
   // Start menu appear on click of start button and disappear on click of start button or anything else except the menu
   body.onclick = function (e) {
@@ -304,35 +306,6 @@ window.onload = function () {
       document.onmousemove = null;
     }
   }
-  // Update the time box in the start bar every 10 seconds
-  function updateTime() {
-    let today = new Date();
-    let hours24 = today.getHours();
-    let hours12;
-    let minutes = today.getMinutes();
-    let suffix = "";
-
-    // define AM/PM
-    if (hours24 >= 12) {
-      suffix = " PM";
-      hours12 = hours24 % 12;
-    } else {
-      suffix = " AM";
-      hours12 = hours24;
-    }
-
-    if (minutes % 10 == 0) {
-      //minutes = minutes + "0";
-    } else if (minutes < 10) {
-      minutes = "0" + minutes;
-    }
-
-    let time = hours12 + ":" + minutes + suffix;
-
-    let timeBox = document.querySelector(".start__time-text");
-
-    timeBox.innerHTML = time;
-  }
 
   function createAboutTask() {
     if (!document.querySelector(".about-task")) {
@@ -358,8 +331,6 @@ window.onload = function () {
       aboutTask.classList.toggle("active");
     };
   }
-
-  // starField();
 
   function createContactTask() {
     // if not existing already
