@@ -323,6 +323,7 @@ window.onload = function () {
         }
         this.createTask();
         this.toggleWindow();
+        starField();
       });
       this.maximize.addEventListener("click", () => {
         this.textbox.classList.toggle("max");
