@@ -85,8 +85,6 @@ window.onload = function () {
   // allows usage about and contact pages
   openAboutWindow = true;
   openContactWindow = true;
-  // openAbout();
-  openContact();
 
   /* PROJECTS */
   // MARIPOSA
@@ -284,6 +282,13 @@ window.onload = function () {
     taskText: "about.txt - Notepad",
   };
 
+  const contactProps = {
+    menuButton: clickContactMenu,
+    windowElement: contactWindow,
+    iconClassName: "contact-icon",
+    taskText: "contact me",
+  };
+
   class Window {
     constructor(props) {
       this.props = props;
@@ -349,93 +354,5 @@ window.onload = function () {
   }
 
   new Window(props);
-
-  function openContact() {
-    clickContactMenu.onclick = function () {
-      console.log("clicked contact");
-      // open window
-      contactWindow.hidden = !openContactWindow;
-      openContactWindow = !openContactWindow;
-
-      // activate starfield
-      starField();
-      // add contact task to taskbar
-      // createContactTask();
-      clickmeContact = document.getElementsByClassName("clickme-contact");
-      createContactTask();
-      // if menu item "contact" is clicked
-      openMinimizeContact();
-      closeContact();
-      maxContact();
-
-      function createContactTask() {
-        // if not existing already
-        if (!document.getElementsByClassName("contact-task")[0]) {
-          contactTask = document.createElement("div");
-          let contactIcon = document.createElement("div");
-          contactIcon.classList.add("contact-icon");
-          contactTask.appendChild(contactIcon);
-          let contactContent = document.createTextNode("contact me");
-          contactTask.appendChild(contactContent);
-          contactTask.classList.add("contact-task");
-          contactTask.classList.add("clickme-contact");
-          let parentDiv = document.getElementById("placeholder-tasks")
-            .parentNode;
-          let newDiv = document.getElementById("placeholder-tasks");
-          console.log(parentDiv);
-          parentDiv.insertBefore(contactTask, newDiv);
-          document
-            .getElementsByClassName("contact-task")[0]
-            .classList.add("active");
-        }
-        // make sure taskbar is still responsive
-        contactTask.onclick = function () {
-          contactWindow.hidden = !openContactWindow;
-          openContactWindow = !openContactWindow;
-          starField();
-          contactTask.classList.toggle("active");
-        };
-      }
-      function openMinimizeContact() {
-        for (let i = 0; i < clickmeContact.length; i++) {
-          clickmeContact[i].onclick = function () {
-            // open window
-            contactWindow.hidden = !openContactWindow;
-            openContactWindow = !openContactWindow;
-
-            starField();
-            // activate task
-            if (contactTask) {
-              contactTask.classList.toggle("active");
-            }
-          };
-        }
-      }
-      function closeContact() {
-        // close window
-        closemeContact.onclick = function () {
-          contactTask.remove();
-          clickmeContact = document.getElementsByClassName("clickme-contact");
-          contactWindow.hidden = true;
-          console.log("CLOSE CONTACT");
-          clickContactMenu.onclick = function () {
-            createContactTask();
-            contactWindow.hidden = false;
-            clickContact();
-          };
-        };
-      }
-      function maxContact() {
-        // same for contact
-
-        let maxContact = false;
-        contactMaximize.onclick = function () {
-          contactWindow.classList.toggle("max");
-          contactTextbox.classList.toggle("max");
-          starField();
-          maxContact = !maxContact;
-        };
-      }
-    };
-  }
+  new Window(contactProps);
 };
