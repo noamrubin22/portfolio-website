@@ -43,11 +43,6 @@ window.onload = function () {
     screenSaver.hidden = false;
   });
 
-  // activate screensaver if mouse is not used for more than 5 min
-  // let moved = true;
-  // if screensaver is hidden
-  // and mouse moved
-
   // Start menu appear on click of start button and disappear on click of start button or anything else except the menu
   body.onclick = function (e) {
     for (let i = 0, l = e.target.classList.length; i < l; ++i) {
@@ -200,6 +195,7 @@ window.onload = function () {
     console.log("Maxxxcontact");
     contactWindow.classList.toggle("max");
     contactTextbox.classList.toggle("max");
+    starField();
     maxContact = !maxContact;
   };
 
@@ -357,6 +353,8 @@ window.onload = function () {
     };
   }
 
+  starField();
+
   function createContactTask() {
     // if not existing already
     if (!document.getElementsByClassName("contact-task")[0]) {
@@ -378,6 +376,7 @@ window.onload = function () {
     }
     // make sure taskbar is still responsive
     contactTask.onclick = function () {
+      starField();
       contactWindow.hidden = !openContactWindow;
       openContactWindow = !openContactWindow;
       contactTask.classList.toggle("active");
