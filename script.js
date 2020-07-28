@@ -7,27 +7,34 @@ window.onload = function () {
   let clickmeContact;
   let closemeMariposa;
 
-  // clock should be correct
+  // set clock
   setInterval(updateTime, 1000);
 
-  // Store the necessary objects
+  // store needed objects
   let startButton = document.querySelector(".start__button");
-
   let startMenu = document.querySelector(".start__menu-main");
-
   let body = document.querySelector("body");
-
   let programsItem = document.querySelector(".programs");
-
   let programsMenu = document.querySelector(".sub__programs");
-
   let screenSaver = document.getElementById("screensaver");
-
   let shutDown = document.querySelector(".shutdown");
-  screenSaver.hidden = true;
+  aboutWindow = document.querySelector(".about-window");
+  let contactWindow = document.querySelector(".contact-window");
+  let clickmeAbout = document.getElementsByClassName("clickme-about");
+  clickmeContact = document.getElementsByClassName("clickme-contact");
+  closemeAbout = document.querySelector(".closeme-about");
+  let clickAboutMenu = document.querySelector(".about");
+  let clickContactMenu = document.querySelector(".contact");
+  let closemeContact = document.querySelector(".closeme-contact");
+  let contactMaximize = document.querySelector(".contact-maximize");
+  let aboutMaximize = document.querySelector(".about-maximize");
+  let aboutTextbox = document.querySelector(".textbox-about");
+  let contactTextbox = document.querySelector(".textbox-contact");
 
-  // SCREENSAVER
-  //show screensaver after if mouse is not moving for 2 min
+  /* SCREENSAVER */
+
+  screenSaver.hidden = true; // remove this in the end!
+  // show screensaver after no mousemove
   var timeout;
   document.onmousemove = function () {
     clearTimeout(timeout);
@@ -36,18 +43,18 @@ window.onload = function () {
     }, 120000);
   };
 
-  // hide screensaver on move
+  // hide screensaver on mouse move
   screenSaver.addEventListener("mousemove", function () {
     screenSaver.hidden = true;
   });
 
-  // activate screensaver on click of shut down computer
+  // show screensaver on when "shutting down" pc
   shutDown.addEventListener("click", function () {
     screenSaver.hidden = false;
   });
 
-  // STARTMENU
-  // Start menu appear on click of start button and disappear on click of start button or anything else except the menu
+  /* START MENU */
+  // start menu appears on click, dissapears on click somewhere else
   body.onclick = function (e) {
     for (let i = 0, l = e.target.classList.length; i < l; ++i) {
       if (/start__.*/.test(e.target.classList[i])) {
@@ -58,7 +65,7 @@ window.onload = function () {
     }
   };
 
-  // Show/hide menu on click
+  // show/hide menu on click
   function menuDisplay(menu) {
     if (menu.classList.contains("menu-open")) {
       menu.classList.remove("menu-open");
@@ -75,135 +82,15 @@ window.onload = function () {
     menuDisplay(programsMenu);
   });
 
-  // Make a click on the tasks open the pages
-  aboutWindow = document.querySelector(".about-window");
-  let contactWindow = document.querySelector(".contact-window");
-  let clickmeAbout = document.getElementsByClassName("clickme-about");
-
-  clickmeContact = document.getElementsByClassName("clickme-contact");
-  closemeAbout = document.querySelector(".closeme-about");
-  console.log(closemeAbout);
-  let clickAboutMenu = document.querySelector(".about");
-  let clickContactMenu = document.querySelector(".contact");
-  let closemeContact = document.querySelector(".closeme-contact");
-  console.log(closemeContact);
-  let contactMaximize = document.querySelector(".contact-maximize");
-  let aboutMaximize = document.querySelector(".about-maximize");
-  console.log(aboutMaximize);
-  console.log(contactMaximize);
-  let aboutTextbox = document.querySelector(".textbox-about");
-  let contactTextbox = document.querySelector(".textbox-contact");
-
+  // allows usage about and contact pages
   openAboutWindow = true;
   openContactWindow = true;
+  openAbout();
+  openContact();
 
-  // make sure that all "about" elements opening the window
-
-  // clickmeAbout[0].onclick = function () {
-  clickAboutMenu.onclick = function () {
-    console.log("clickd menu about");
-    // activate task
-    // if (aboutTask) {
-    //   aboutTask.classList.toggle("active");
-    // }
-    // for (let i = 0; i < clickmeAbout.length; i++) {
-    console.log("clicked about");
-    // aboutWindow.hidden = false;
-    aboutWindow.hidden = !openAboutWindow;
-    openAboutWindow = !openAboutWindow;
-    // add about task to taskbar
-    createAboutTask();
-    // }
-    for (let i = 0; i < clickmeAbout.length; i++) {
-      clickmeAbout[i].onclick = function () {
-        // open window
-        aboutWindow.hidden = !openAboutWindow;
-        openAboutWindow = !openAboutWindow;
-        // activate task
-        if (aboutTask) {
-          aboutTask.classList.toggle("active");
-        }
-      };
-    }
-  };
-
-  // do the same for "contact" elements
-  // if menu item "contact" is clicked
-  clickContact();
-  function clickContact() {
-    clickContactMenu.onclick = function () {
-      console.log("clicked contact");
-      // open window
-      contactWindow.hidden = !openContactWindow;
-      openContactWindow = !openContactWindow;
-
-      // activate starfield
-      starField();
-      // add contact task to taskbar
-      createContactTask();
-      console.log("clickMECONTACT", clickmeContact);
-      clickmeContact = document.getElementsByClassName("clickme-contact");
-      for (let i = 0; i < clickmeContact.length; i++) {
-        clickmeContact[i].onclick = function () {
-          // open window
-          contactWindow.hidden = !openContactWindow;
-          openContactWindow = !openContactWindow;
-
-          starField();
-          // activate task
-          if (contactTask) {
-            contactTask.classList.toggle("active");
-          }
-        };
-      }
-    };
-  }
-
-  // close window
-  closemeContact.onclick = function () {
-    contactTask.remove();
-    clickmeContact = document.getElementsByClassName("clickme-contact");
-    contactWindow.hidden = true;
-    console.log("CLOSE CONTACT");
-    clickContactMenu.onclick = function () {
-      createContactTask();
-      contactWindow.hidden = false;
-      clickContact();
-    };
-  };
-  // close window
-  closemeAbout.onclick = function () {
-    aboutTask.remove();
-    aboutWindow.hidden = true;
-    console.log("CLOSE ABOUT");
-    clickAboutMenu.onclick = function () {
-      createAboutTask();
-      aboutWindow.hidden = false;
-    };
-  };
-  // maximizing the windows
-  // maximize window by click
-  let maxAbout = false;
-  let maxContact = false;
-
-  // iterate over the amount of maximized elements and change styling from About
-  aboutMaximize.onclick = function () {
-    aboutWindow.classList.toggle("max");
-    aboutTextbox.classList.toggle("max");
-    maxAbout = !maxAbout;
-  };
-
-  // same for contact
-  contactMaximize.onclick = function () {
-    contactWindow.classList.toggle("max");
-    contactTextbox.classList.toggle("max");
-    starField();
-    maxContact = !maxContact;
-  };
-
-  // Projects-pages
+  /* PROJECTS */
   // MARIPOSA
-  // locate elements
+  // store objects
   let mariposaProject = document.getElementsByClassName("mariposa-project")[0];
   let mariposaDesktop = document.querySelector(".mariposa");
   let mariposaMenu = document.querySelector(".mariposa-menu");
@@ -216,24 +103,24 @@ window.onload = function () {
     openMariposa();
   });
 
-  // open project when clicked through submenu
+  // open project when submenu clicked
   mariposaMenu.addEventListener("click", function () {
     openMariposa();
   });
 
-  // DRAGGABLE
+  /* DRAGGABLE */
   // Make the desktop icons draggable
   let desktopIcons = document.getElementsByClassName("desktop-icon");
-
   for (let i = 0; i < desktopIcons.length; i++) {
     dragElement(desktopIcons[i]);
   }
-  // make projects draggable
-  dragElement(mariposaProject);
 
   // make windows draggable
   dragElement(aboutWindow);
   dragElement(contactWindow);
+
+  // make projects draggable
+  dragElement(mariposaProject);
 
   function dragElement(elmnt) {
     let pos1 = 0,
@@ -299,59 +186,6 @@ window.onload = function () {
       document.onmouseup = null;
       document.onmousemove = null;
     }
-  }
-
-  function createAboutTask() {
-    if (!document.querySelector(".about-task")) {
-      console.log("about is not there and we are creating it now");
-      aboutTask = document.createElement("div");
-      let aboutIcon = document.createElement("div");
-      aboutIcon.classList.add("about-icon");
-      aboutTask.appendChild(aboutIcon);
-      let aboutContent = document.createTextNode("about.txt - Notepad");
-      aboutTask.appendChild(aboutContent);
-      aboutTask.classList.add("about-task");
-      aboutTask.classList.add("clickme-about");
-      let parentDiv = document.getElementById("placeholder-tasks").parentNode;
-      let newDiv = document.getElementById("placeholder-tasks");
-      console.log(newDiv);
-      parentDiv.insertBefore(aboutTask, newDiv);
-      document.getElementsByClassName("about-task")[0].classList.add("active");
-    }
-    // make sure taskbar is still responsive
-    aboutTask.onclick = function () {
-      aboutWindow.hidden = !openAboutWindow;
-      openAboutWindow = !openAboutWindow;
-      aboutTask.classList.toggle("active");
-    };
-  }
-
-  function createContactTask() {
-    // if not existing already
-    if (!document.getElementsByClassName("contact-task")[0]) {
-      contactTask = document.createElement("div");
-      let contactIcon = document.createElement("div");
-      contactIcon.classList.add("contact-icon");
-      contactTask.appendChild(contactIcon);
-      let contactContent = document.createTextNode("contact me");
-      contactTask.appendChild(contactContent);
-      contactTask.classList.add("contact-task");
-      contactTask.classList.add("clickme-contact");
-      let parentDiv = document.getElementById("placeholder-tasks").parentNode;
-      let newDiv = document.getElementById("placeholder-tasks");
-      console.log(parentDiv);
-      parentDiv.insertBefore(contactTask, newDiv);
-      document
-        .getElementsByClassName("contact-task")[0]
-        .classList.add("active");
-    }
-    // make sure taskbar is still responsive
-    contactTask.onclick = function () {
-      contactWindow.hidden = !openContactWindow;
-      openContactWindow = !openContactWindow;
-      starField();
-      contactTask.classList.toggle("active");
-    };
   }
 
   function openMariposa() {
@@ -439,5 +273,167 @@ window.onload = function () {
         };
       }
     }
+  }
+
+  function openAbout() {
+    clickAboutMenu.onclick = function () {
+      console.log("clicked about");
+      aboutWindow.hidden = !openAboutWindow;
+      openAboutWindow = !openAboutWindow;
+      // add about task to taskbar
+      createAboutTask();
+      openMinimizeAbout();
+      closeAbout();
+      maxAbout();
+
+      function createAboutTask() {
+        if (!document.querySelector(".about-task")) {
+          console.log("about is not there and we are creating it now");
+          aboutTask = document.createElement("div");
+          let aboutIcon = document.createElement("div");
+          aboutIcon.classList.add("about-icon");
+          aboutTask.appendChild(aboutIcon);
+          let aboutContent = document.createTextNode("about.txt - Notepad");
+          aboutTask.appendChild(aboutContent);
+          aboutTask.classList.add("about-task");
+          aboutTask.classList.add("clickme-about");
+          let parentDiv = document.getElementById("placeholder-tasks")
+            .parentNode;
+          let newDiv = document.getElementById("placeholder-tasks");
+          console.log(newDiv);
+          parentDiv.insertBefore(aboutTask, newDiv);
+          document
+            .getElementsByClassName("about-task")[0]
+            .classList.add("active");
+        }
+        // make sure taskbar is still responsive
+        aboutTask.onclick = function () {
+          aboutWindow.hidden = !openAboutWindow;
+          openAboutWindow = !openAboutWindow;
+          aboutTask.classList.toggle("active");
+        };
+      }
+      function openMinimizeAbout() {
+        for (let i = 0; i < clickmeAbout.length; i++) {
+          clickmeAbout[i].onclick = function () {
+            // open window
+            aboutWindow.hidden = !openAboutWindow;
+            openAboutWindow = !openAboutWindow;
+            // activate task
+            if (aboutTask) {
+              aboutTask.classList.toggle("active");
+            }
+          };
+        }
+      }
+      function closeAbout() {
+        closemeAbout.onclick = function () {
+          aboutTask.remove();
+          aboutWindow.hidden = true;
+          console.log("CLOSE ABOUT");
+          clickAboutMenu.onclick = function () {
+            createAboutTask();
+            aboutWindow.hidden = false;
+          };
+        };
+      }
+      // iterate over the amount of maximized elements and change styling from About
+      function maxAbout() {
+        let maxAbout = false;
+        aboutMaximize.onclick = function () {
+          aboutWindow.classList.toggle("max");
+          aboutTextbox.classList.toggle("max");
+          maxAbout = !maxAbout;
+        };
+      }
+    };
+  }
+
+  function openContact() {
+    clickContactMenu.onclick = function () {
+      console.log("clicked contact");
+      // open window
+      contactWindow.hidden = !openContactWindow;
+      openContactWindow = !openContactWindow;
+
+      // activate starfield
+      starField();
+      // add contact task to taskbar
+      // createContactTask();
+      clickmeContact = document.getElementsByClassName("clickme-contact");
+      createContactTask();
+      // if menu item "contact" is clicked
+      openMinimizeContact();
+      closeContact();
+      maxContact();
+      function createContactTask() {
+        // if not existing already
+        if (!document.getElementsByClassName("contact-task")[0]) {
+          contactTask = document.createElement("div");
+          let contactIcon = document.createElement("div");
+          contactIcon.classList.add("contact-icon");
+          contactTask.appendChild(contactIcon);
+          let contactContent = document.createTextNode("contact me");
+          contactTask.appendChild(contactContent);
+          contactTask.classList.add("contact-task");
+          contactTask.classList.add("clickme-contact");
+          let parentDiv = document.getElementById("placeholder-tasks")
+            .parentNode;
+          let newDiv = document.getElementById("placeholder-tasks");
+          console.log(parentDiv);
+          parentDiv.insertBefore(contactTask, newDiv);
+          document
+            .getElementsByClassName("contact-task")[0]
+            .classList.add("active");
+        }
+        // make sure taskbar is still responsive
+        contactTask.onclick = function () {
+          contactWindow.hidden = !openContactWindow;
+          openContactWindow = !openContactWindow;
+          starField();
+          contactTask.classList.toggle("active");
+        };
+      }
+      function openMinimizeContact() {
+        for (let i = 0; i < clickmeContact.length; i++) {
+          clickmeContact[i].onclick = function () {
+            // open window
+            contactWindow.hidden = !openContactWindow;
+            openContactWindow = !openContactWindow;
+
+            starField();
+            // activate task
+            if (contactTask) {
+              contactTask.classList.toggle("active");
+            }
+          };
+        }
+      }
+      function closeContact() {
+        // close window
+        closemeContact.onclick = function () {
+          contactTask.remove();
+          clickmeContact = document.getElementsByClassName("clickme-contact");
+          contactWindow.hidden = true;
+          console.log("CLOSE CONTACT");
+          clickContactMenu.onclick = function () {
+            createContactTask();
+            contactWindow.hidden = false;
+            clickContact();
+          };
+        };
+      }
+      function maxContact() {
+        // same for contact
+
+        let maxContact = false;
+        contactMaximize.onclick = function () {
+          contactWindow.classList.toggle("max");
+          contactTextbox.classList.toggle("max");
+          starField();
+          maxContact = !maxContact;
+        };
+      }
+    };
   }
 };
