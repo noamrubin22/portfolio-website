@@ -144,25 +144,30 @@ window.onload = function () {
     function elementDrag(e) {
       e = e || window.event;
       e.preventDefault();
+
+      const { innerWidth, innerHeight } = window;
       // calculate the new cursor position:
       pos1 = pos3 - e.clientX;
       pos2 = pos4 - e.clientY;
       pos3 = e.clientX;
       pos4 = e.clientY;
 
+      // when mouse leaves monitor, leave element behind
+      if (e.clientX > innerWidth || e.clientY > innerHeight) {
+        return;
+      }
       // set the element's new position:
       elmnt.style.top = elmnt.offsetTop - pos2 + "px";
       elmnt.style.left = elmnt.offsetLeft - pos1 + "px";
-      console.log(elmnt.offsetTop);
-      limitDrag(elmnt);
+      limitDrag(elmnt, innerWidth, innerHeight);
     }
 
-    function limitDrag(elmnt) {
+    function limitDrag(elmnt, innerWidth, innerHeight) {
       // define monitor & elmnt width and height
-      const { innerWidth, innerHeight } = window;
       const { width, height } = elmnt.getBoundingClientRect();
       const { offsetTop, offsetLeft, style } = elmnt;
 
+      // limit drag function to monitor
       if (offsetTop <= 0) {
         style.top = 0 + "px";
       }
