@@ -1,7 +1,7 @@
 window.onload = function () {
   // global variables
   let closemeAbout;
-  let aboutTask;
+  let aboutTask; //
   let contactTask;
   let aboutWindow;
   let clickmeContact;
@@ -85,7 +85,7 @@ window.onload = function () {
   // allows usage about and contact pages
   openAboutWindow = true;
   openContactWindow = true;
-  openAbout();
+  // openAbout();
   openContact();
 
   /* PROJECTS */
@@ -277,79 +277,78 @@ window.onload = function () {
     }
   }
 
-  function openAbout() {
-    clickAboutMenu.onclick = function () {
-      console.log("clicked about");
-      aboutWindow.hidden = !openAboutWindow;
-      openAboutWindow = !openAboutWindow;
-      // add about task to taskbar
-      createAboutTask();
-      openMinimizeAbout();
-      closeAbout();
-      maxAbout();
+  const props = {
+    menuButton: clickAboutMenu,
+    windowElement: aboutWindow,
+    iconClassName: "about-icon",
+    taskText: "about.txt - Notepad",
+  };
 
-      function createAboutTask() {
-        if (!document.querySelector(".about-task")) {
-          console.log("about is not there and we are creating it now");
-          aboutTask = document.createElement("div");
-          let aboutIcon = document.createElement("div");
-          aboutIcon.classList.add("about-icon");
-          aboutTask.appendChild(aboutIcon);
-          let aboutContent = document.createTextNode("about.txt - Notepad");
-          aboutTask.appendChild(aboutContent);
-          aboutTask.classList.add("about-task");
-          aboutTask.classList.add("clickme-about");
-          let parentDiv = document.getElementById("placeholder-tasks")
-            .parentNode;
-          let newDiv = document.getElementById("placeholder-tasks");
-          console.log(newDiv);
-          parentDiv.insertBefore(aboutTask, newDiv);
-          document
-            .getElementsByClassName("about-task")[0]
-            .classList.add("active");
+  class Window {
+    constructor(props) {
+      this.props = props;
+      this.isOpen = false;
+      this.getWindowButtons();
+      this.createEventHandler();
+    }
+
+    createTask() {
+      const task = document.createElement("div");
+      const icon = document.createElement("div");
+      const tasksList = document.getElementById("tasks");
+      const content = document.createTextNode(this.props.taskText);
+      icon.classList.add(this.props.iconClassName);
+      task.appendChild(icon);
+      task.appendChild(content);
+      task.classList.add("task");
+      tasksList.append(task);
+      this.task = task;
+      task.addEventListener("click", () => {
+        this.toggleWindow();
+      });
+    }
+
+    createEventHandler() {
+      this.props.menuButton.addEventListener("click", () => {
+        if (this.task) {
+          if (!this.isOpen) {
+            this.toggleWindow();
+          }
+          return;
         }
-        // make sure taskbar is still responsive
-        aboutTask.onclick = function () {
-          aboutWindow.hidden = !openAboutWindow;
-          openAboutWindow = !openAboutWindow;
-          aboutTask.classList.toggle("active");
-        };
-      }
-      function openMinimizeAbout() {
-        for (let i = 0; i < clickmeAbout.length; i++) {
-          clickmeAbout[i].onclick = function () {
-            // open window
-            aboutWindow.hidden = !openAboutWindow;
-            openAboutWindow = !openAboutWindow;
-            // activate task
-            if (aboutTask) {
-              aboutTask.classList.toggle("active");
-            }
-          };
-        }
-      }
-      function closeAbout() {
-        closemeAbout.onclick = function () {
-          aboutTask.remove();
-          aboutWindow.hidden = true;
-          console.log("CLOSE ABOUT");
-          clickAboutMenu.onclick = function () {
-            createAboutTask();
-            aboutWindow.hidden = false;
-          };
-        };
-      }
-      // iterate over the amount of maximized elements and change styling from About
-      function maxAbout() {
-        let maxAbout = false;
-        aboutMaximize.onclick = function () {
-          aboutWindow.classList.toggle("max");
-          aboutTextbox.classList.toggle("max");
-          maxAbout = !maxAbout;
-        };
-      }
-    };
+        this.createTask();
+        this.toggleWindow();
+      });
+      this.maximize.addEventListener("click", () => {
+        this.textbox.classList.toggle("max");
+        this.props.windowElement.classList.toggle("max");
+      });
+      this.minimize.addEventListener("click", () => {
+        this.toggleWindow();
+      });
+      this.close.addEventListener("click", () => {
+        this.toggleWindow();
+        this.task.remove();
+        this.task = undefined;
+      });
+    }
+
+    toggleWindow() {
+      this.isOpen = !this.isOpen;
+      this.props.windowElement.hidden = !this.isOpen;
+      this.task.classList.toggle("active");
+    }
+
+    getWindowButtons() {
+      const { windowElement } = this.props;
+      this.maximize = windowElement.querySelector("[data-maximize]");
+      this.minimize = windowElement.querySelector("[data-minimize]");
+      this.close = windowElement.querySelector("[data-close]");
+      this.textbox = windowElement.querySelector("[data-textbox]");
+    }
   }
+
+  new Window(props);
 
   function openContact() {
     clickContactMenu.onclick = function () {
