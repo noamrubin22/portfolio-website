@@ -153,32 +153,29 @@ window.onload = function () {
       // set the element's new position:
       elmnt.style.top = elmnt.offsetTop - pos2 + "px";
       elmnt.style.left = elmnt.offsetLeft - pos1 + "px";
+      console.log(elmnt.offsetTop);
+      limitDrag(elmnt);
+    }
 
-      // define size elements
-      // let monitorHeight = document.getElementById("monitor").offsetHeight;
-      // let monitorWidth = document.getElementById("monitor").offsetWidth;
-      // let startHeight = document.getElementById("start").offsetHeight;
-      // let windowWidth = document.getElementById("window").offsetWidth;
-      // let windowHeight = document.getElementById("window").offsetHeight;
-      // let monitorHeightBorders = document.getElementById("window").clientHeight;
+    function limitDrag(elmnt) {
+      // define monitor & elmnt width and height
+      const { innerWidth, innerHeight } = window;
+      const { width, height } = elmnt.getBoundingClientRect();
+      const { offsetTop, offsetLeft, style } = elmnt;
 
-      // make sure window is limited to desktopsize
-      // if (pos4 > monitorHeight - startHeight - windowHeight) {
-      //   elmnt.style.top = monitorHeight - startHeight - windowHeight + "px";
-      // } else if (pos4 < monitorHeight - monitorHeightBorders) {
-      //   elmnt.style.top = 0 + "px";
-      // } else {
-      //   elmnt.style.top = elmnt.offsetTop - pos2 + "px";
-      // }
+      if (offsetTop <= 0) {
+        style.top = 0 + "px";
+      }
+      if (offsetLeft <= 0) {
+        style.left = 0 + "px";
+      }
 
-      // if (pos3 > monitorWidth) {
-      //   console.log("crossing borders");
-      //   elmnt.style.left = monitorWidth - windowWidth + "px";
-      // } else if (pos3 < windowWidth) {
-      //   elmnt.style.left = 0 + "px";
-      // } else {
-      //   elmnt.style.left = elmnt.offsetLeft - pos1 + "px";
-      // }
+      if (offsetLeft + width >= innerWidth) {
+        style.left = innerWidth - width + "px";
+      }
+      if (offsetTop + height >= innerHeight) {
+        style.top = innerHeight - height + "px";
+      }
     }
 
     function closeDragElement() {
@@ -366,6 +363,7 @@ window.onload = function () {
       openMinimizeContact();
       closeContact();
       maxContact();
+
       function createContactTask() {
         // if not existing already
         if (!document.getElementsByClassName("contact-task")[0]) {

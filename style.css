@@ -16,13 +16,13 @@ body {
 }
 .monitor {
   position: relative;
-  width: 90%;
-  height: 90%;
-  /* background: #008080; */
-  background: rgb(109, 43, 109);
-  margin-left: 5%;
-  margin-right: 5%;
-  margin-top: 3%;
+  width: 100%;
+  height: 100%;
+  background: #008080;
+  /* background: rgb(109, 43, 109); */
+  /* margin-left: 5%; */
+  /* margin-right: 5%; */
+  /* margin-top: 3%; */
   overflow: hidden;
 }
 
@@ -49,7 +49,7 @@ body {
 }
 
 .start__button {
-  width: 11%;
+  width: 8%;
   height: 72%;
   background: #c3c6cd;
   border-top: 2px solid #deebf3;
@@ -134,7 +134,7 @@ body {
   border-left: 2px solid #deebf3;
   border-right: 2px solid black;
   border-bottom: 2px solid black;
-  width: 11%;
+  width: 8%;
   display: none;
   position: absolute;
   bottom: 38px;
@@ -442,7 +442,8 @@ body {
 .contact-icon {
   width: 14px;
   height: 14px;
-  /* background-image: url(".vscode/images/contact.svg"); */
+  margin: 6px;
+  background-image: url("./images/contact.png");
   background-repeat: no-repeat;
   background-position: center center;
 }
@@ -473,22 +474,24 @@ body {
 }
 
 .about-window {
-  width: 300px;
+  width: 600px;
   height: 400px;
   border: outset 2px;
   position: relative;
   background: #c0c0c0;
+  z-index: 9999;
 }
 
 .about-window.max {
   width: 100%;
-  height: 75vh;
+  height: 96%;
   top: 0 !important;
   left: 0 !important;
   bottom: auto !important;
   border: outset 2px;
   background: #c0c0c0;
   position: relative;
+  z-index: 9999;
 }
 
 .contact-window {
@@ -498,6 +501,7 @@ body {
   position: absolute;
   /* top: 10px; */
   background: #c0c0c0;
+  z-index: 9999;
 }
 .contact-window.max {
   width: 100%;
@@ -508,6 +512,7 @@ body {
   border: outset 2px;
   background: #c0c0c0;
   /* position: relative; */
+  z-index: 9999;
 }
 
 /* social media buttons */
@@ -561,24 +566,24 @@ img {
 
 /* mariposa project */
 .mariposa-project {
-  width: 300px;
+  width: 600px;
   height: 400px;
   border: outset 2px;
   position: relative;
   background: #c0c0c0;
-  /* z-index: 100; */
+  z-index: 9999;
 }
 
 .mariposa-project.max {
   width: 100%;
-  height: 75vh;
+  height: 96%;
   top: 0 !important;
   left: 0 !important;
   bottom: auto !important;
   border: outset 2px;
   background: #c0c0c0;
   position: relative;
-  /* z-index: 100; */
+  z-index: 9999;
 }
 /* buttons window */
 .notepad-minimize,
