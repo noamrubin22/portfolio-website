@@ -6,35 +6,6 @@ window.onload = function () {
   let aboutWindow;
   let clickmeContact;
   let closemeMariposa;
-  // Update the time box in the start bar every 10 seconds
-  function updateTime() {
-    let today = new Date();
-    let hours24 = today.getHours();
-    let hours12;
-    let minutes = today.getMinutes();
-    let suffix = "";
-
-    // define AM/PM
-    if (hours24 >= 12) {
-      suffix = " PM";
-      hours12 = hours24 % 12;
-    } else {
-      suffix = " AM";
-      hours12 = hours24;
-    }
-
-    if (minutes % 10 == 0) {
-      //minutes = minutes + "0";
-    } else if (minutes < 10) {
-      minutes = "0" + minutes;
-    }
-
-    let time = hours12 + ":" + minutes + suffix;
-
-    let timeBox = document.querySelector(".start__time-text");
-
-    timeBox.innerHTML = time;
-  }
 
   setInterval(updateTime, 1000);
 
@@ -48,6 +19,25 @@ window.onload = function () {
   let programsItem = document.querySelector(".programs");
 
   let programsMenu = document.querySelector(".sub__programs");
+
+  let screenSaver = document.getElementById("screensaver");
+
+  let shutDown = document.querySelector(".shutdown");
+
+  // hide screensaver on move
+  screenSaver.addEventListener("mousemove", function () {
+    screenSaver.hidden = true;
+  });
+
+  // activate screensaver on click of shut down computer
+  shutDown.addEventListener("click", function () {
+    screenSaver.hidden = false;
+  });
+
+  // activate screensaver if mouse is not used for more than 5 min
+  body.addEventListener("mousemoveend", function () {
+    console.log("mouse is not moving");
+  });
 
   // Start menu appear on click of start button and disappear on click of start button or anything else except the menu
   body.onclick = function (e) {
@@ -303,6 +293,36 @@ window.onload = function () {
       document.onmousemove = null;
     }
   }
+  // Update the time box in the start bar every 10 seconds
+  function updateTime() {
+    let today = new Date();
+    let hours24 = today.getHours();
+    let hours12;
+    let minutes = today.getMinutes();
+    let suffix = "";
+
+    // define AM/PM
+    if (hours24 >= 12) {
+      suffix = " PM";
+      hours12 = hours24 % 12;
+    } else {
+      suffix = " AM";
+      hours12 = hours24;
+    }
+
+    if (minutes % 10 == 0) {
+      //minutes = minutes + "0";
+    } else if (minutes < 10) {
+      minutes = "0" + minutes;
+    }
+
+    let time = hours12 + ":" + minutes + suffix;
+
+    let timeBox = document.querySelector(".start__time-text");
+
+    timeBox.innerHTML = time;
+  }
+
   function createAboutTask() {
     if (!document.querySelector(".about-task")) {
       console.log("about is not there and we are creating it now");

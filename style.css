@@ -6,13 +6,22 @@ body {
   padding: 0;
 }
 
+#screensaver {
+  width: 100%;
+  height: 100%;
+  z-index: 9999;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
 .monitor {
   position: relative;
-  width: 80%;
-  height: 80%;
+  width: 90%;
+  height: 100%;
   background: #008080;
-  margin-left: 10%;
-  margin-top: 7.5%;
+  margin-left: 5%;
+  margin-right: 5%;
+  /* margin-top: 3%; */
   overflow: hidden;
 }
 
@@ -378,9 +387,9 @@ body {
   align-items: center;
 }
 .contact-icon {
-  width: 32px;
-  height: 32px;
-  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 32 32'%3E%3Cpath d='M7 23L23 7M23 23L7 7M15 26V4M26 15H4' stroke='black' stroke-width='2'/%3E%3Ccircle cx='15' cy='15' r='7'/%3E%3Ccircle cx='13' cy='13' r='2' fill='white'/%3E%3C/svg%3E");
+  width: 14px;
+  height: 14px;
+  background-image: url(".vscode/images/contact.svg");
   background-repeat: no-repeat;
   background-position: center center;
 }
@@ -470,7 +479,7 @@ body {
 .github-icon {
   width: 32px;
   height: 32px;
-  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 32 32'%3E%3Cpath d='M7 23L23 7M23 23L7 7M15 26V4M26 15H4' stroke='black' stroke-width='2'/%3E%3Ccircle cx='15' cy='15' r='7'/%3E%3Ccircle cx='13' cy='13' r='2' fill='white'/%3E%3C/svg%3E");
+  background-image: url("./images/gihub_01.svg");
   background-repeat: no-repeat;
   background-position: center center;
 }
