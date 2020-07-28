@@ -439,8 +439,8 @@ body {
 }
 
 .contact-window {
-  width: 300px;
-  height: 400px;
+  width: 800px;
+  height: 300px;
   border: outset 2px;
   position: absolute;
   /* top: 10px; */

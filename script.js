@@ -97,6 +97,10 @@ window.onload = function () {
   openAboutWindow = true;
   openContactWindow = true;
 
+  // if (openContactWindow) {
+  //   starField();
+  // }
+
   // make sure that all "about" elements opening the window
 
   // clickmeAbout[0].onclick = function () {
@@ -136,6 +140,9 @@ window.onload = function () {
       // open window
       contactWindow.hidden = !openContactWindow;
       openContactWindow = !openContactWindow;
+
+      // activate starfield
+      starField();
       // add contact task to taskbar
       createContactTask();
       console.log("clickMECONTACT", clickmeContact);
@@ -146,6 +153,7 @@ window.onload = function () {
           contactWindow.hidden = !openContactWindow;
           openContactWindow = !openContactWindow;
 
+          starField();
           // activate task
           if (contactTask) {
             contactTask.classList.toggle("active");
@@ -184,7 +192,6 @@ window.onload = function () {
 
   // iterate over the amount of maximized elements and change styling from About
   aboutMaximize.onclick = function () {
-    console.log("maxxxabout");
     aboutWindow.classList.toggle("max");
     aboutTextbox.classList.toggle("max");
     maxAbout = !maxAbout;
@@ -192,7 +199,6 @@ window.onload = function () {
 
   // same for contact
   contactMaximize.onclick = function () {
-    console.log("Maxxxcontact");
     contactWindow.classList.toggle("max");
     contactTextbox.classList.toggle("max");
     starField();
@@ -376,9 +382,9 @@ window.onload = function () {
     }
     // make sure taskbar is still responsive
     contactTask.onclick = function () {
-      starField();
       contactWindow.hidden = !openContactWindow;
       openContactWindow = !openContactWindow;
+      starField();
       contactTask.classList.toggle("active");
     };
   }

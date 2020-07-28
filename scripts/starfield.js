@@ -3,6 +3,7 @@ function starField() {
   console.log(canvas);
   const c = canvas.getContext("2d");
   let contactContent = document.getElementById("contact-content");
+  let contactTextBox = document.querySelector(".textbox-contact");
 
   let w;
   let h;
@@ -11,6 +12,10 @@ function starField() {
   const setCanvasExtents = () => {
     w = contactContent.clientWidth;
     h = contactContent.clientHeight;
+    if (w == 0) {
+      w = contactTextBox.clientWidth;
+      h = contactTextBox.clientHeight;
+    }
     canvas.width = w;
     canvas.height = h;
   };
@@ -77,15 +82,15 @@ function starField() {
     moveStars(elapsed * 0.3);
 
     clear();
-    c.font = "28px Serif";
+    c.font = "22px Serif";
     c.textAlign = "center";
     c.fillStyle = "purple";
     c.fillText(
       `I believe that evolution is about cooperation instead of competition.`,
       w / 2,
-      h / 3
+      h / 8
     );
-    c.fillText(`Get in touch`, w / 2, h / 3 + 50);
+    c.fillText(`Get in touch`, w / 2, h / 3);
 
     let img = new Image();
     img.addEventListener("load", function () {});
