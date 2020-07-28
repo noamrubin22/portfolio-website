@@ -353,7 +353,7 @@ window.onload = function () {
     };
   }
 
-  starField();
+  // starField();
 
   function createContactTask() {
     // if not existing already

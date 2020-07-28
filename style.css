@@ -651,3 +651,28 @@ body {
 .contact-img {
   width: 200px;
 }
+
+#github-contact {
+  position: absolute;
+  bottom: 40%;
+  left: 33%;
+  z-index: 999;
+  width: 10%;
+}
+
+#mail-contact {
+  position: absolute;
+  bottom: 40%;
+  left: 48%;
+  z-index: 999;
+  width: 10%;
+}
+
+#linkedin-contact {
+  position: absolute;
+  bottom: 40%;
+  left: 47%;
+  z-index: 999;
+  width: 32%;
+  /* height: 20%; */
+}
