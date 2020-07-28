@@ -293,7 +293,8 @@ body {
 .desktop-icon__text {
   color: white;
   font-size: 12px;
-  margin-top: 5px;
+  margin-top: 12px;
+  margin-left: 12px;
   margin-bottom: 0;
 }
 
@@ -308,8 +309,17 @@ body {
 
 .computer__icon {
   width: 55px;
-  background: url("https://www.pngkey.com/png/full/44-448393_windows-95-icons-png-picture-free-stock-icon.png");
-  background-size: contain;
+  margin: 9px;
+  /* background: url("https://www.pngkey.com/png/full/44-448393_windows-95-icons-png-picture-free-stock-icon.png"); */
+  /* background: url("./images/Mariposa_01.svg"); */
+  /* background-size: contain; */
+}
+
+#mariposa-icon {
+  width: 75px;
+}
+#gerrit-icon {
+  width: 67px;
 }
 
 .recycle {
@@ -319,7 +329,7 @@ body {
 
 .recycle__icon {
   width: 53px;
-  background: url("https://telegram-stickers.github.io/public/stickers/windows-95/27.png");
+  background: url("./images/Gerrit_01.png");
   background-size: contain;
 }
 
@@ -347,6 +357,16 @@ body {
   border: 1px dashed black;
 }
 
+#contact-img {
+  background-position: 87% 21%;
+  width: 30px;
+  margin-left: 4px;
+  margin-right: 4px;
+}
+
+#volume-img {
+  width: 24px;
+}
 .bg-img {
   background-image: url(https://i.pinimg.com/originals/96/17/c0/9617c03faeb0986659acd2fa7ff87a26.png);
   -o-object-fit: cover;
@@ -479,13 +499,21 @@ body {
 .github-icon {
   width: 32px;
   height: 32px;
-  background-image: url("./images/gihub_01.svg");
+  background-image: url("./images/gihub_01.png");
   background-repeat: no-repeat;
   background-position: center center;
 }
-.github-icon:hover,
-.linkedin-icon:hover,
-.email-icon:hover {
+
+img {
+  width: 32px;
+  background: transparent;
+  -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#00FFFFFF,endColorstr=#00FFFFFF)"; /* IE8 */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#00FFFFFF,endColorstr=#00FFFFFF); /* IE6 & 7 */
+  zoom: 1;
+}
+#github-icon:hover,
+#linkedin-icon:hover,
+#email-icon:hover {
   cursor: pointer;
   background: #00207d;
 }
@@ -654,25 +682,25 @@ body {
 
 #github-contact {
   position: absolute;
-  bottom: 40%;
-  left: 33%;
+  bottom: 28%;
+  left: 30%;
   z-index: 999;
   width: 10%;
 }
 
 #mail-contact {
   position: absolute;
-  bottom: 40%;
-  left: 48%;
+  bottom: 28%;
+  left: 46%;
   z-index: 999;
   width: 10%;
 }
 
 #linkedin-contact {
   position: absolute;
-  bottom: 40%;
+  bottom: 29%;
   left: 47%;
   z-index: 999;
-  width: 32%;
+  width: 30%;
   /* height: 20%; */
 }

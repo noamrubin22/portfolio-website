@@ -86,7 +86,7 @@ function starField() {
     c.textAlign = "center";
     c.fillStyle = "purple";
     c.fillText(
-      `I believe that evolution is about cooperation instead of competition.`,
+      `I believe evolution is about cooperation instead of competition.`,
       w / 2,
       h / 8
     );
