@@ -1,12 +1,4 @@
 window.onload = function () {
-  // global variables
-  let closemeAbout;
-  let aboutTask; //
-  let contactTask;
-  let aboutWindow;
-  let clickmeContact;
-  let closemeMariposa;
-
   // set clock
   setInterval(updateTime, 1000);
 
@@ -18,18 +10,6 @@ window.onload = function () {
   let programsMenu = document.querySelector(".sub__programs");
   let screenSaver = document.getElementById("screensaver");
   let shutDown = document.querySelector(".shutdown");
-  aboutWindow = document.querySelector(".about-window");
-  let contactWindow = document.querySelector(".contact-window");
-  let clickmeAbout = document.getElementsByClassName("clickme-about");
-  clickmeContact = document.getElementsByClassName("clickme-contact");
-  closemeAbout = document.querySelector(".closeme-about");
-  let clickAboutMenu = document.querySelector(".about");
-  let clickContactMenu = document.querySelector(".contact");
-  const gerritWindow = document.querySelector(".gerrit-window");
-  const spotavibeWindow = document.querySelector(".spotavibe-window");
-  const musicWindow = document.querySelector(".music-window");
-  const robotWindow = document.querySelector(".robot-window");
-  const mariposaWindow = document.querySelector(".mariposa-window");
 
   /* SCREENSAVER */
 
@@ -82,31 +62,34 @@ window.onload = function () {
     menuDisplay(programsMenu);
   });
 
-  // allows usage about and contact pages
-  openAboutWindow = true;
-  openContactWindow = true;
-
-  /* PROJECTS */
-  // MARIPOSA
-  // store objects
-  const mariposaProject = document.getElementsByClassName(
-    "mariposa-project"
-  )[0];
-  closemeMariposa = document.querySelector(".closeme-mariposa");
-  const mariposaMaximize = document.querySelector(".mariposa-maximize");
-  let clickmeMariposa = document.getElementsByClassName("clickme-mariposa");
+  /* OPENS WINDOW AND ADD TASK TO TASKBAR */
+  // store variables
+  // menu buttons
+  const clickAboutMenu = document.querySelector(".about");
+  const clickContactMenu = document.querySelector(".contact");
   const clickMariposaMenu = document.querySelector(".mariposa-menu");
   const clickGerritMenu = document.querySelector(".gerrit-menu");
   const clickMusicMenu = document.querySelector(".music-menu");
   const clickRobotMenu = document.querySelector(".robot-menu");
   const clickSpotavibeMenu = document.querySelector(".spotavibe-menu");
+
+  // windows
+  const gerritWindow = document.querySelector(".gerrit-window");
+  const spotavibeWindow = document.querySelector(".spotavibe-window");
+  const musicWindow = document.querySelector(".music-window");
+  const robotWindow = document.querySelector(".robot-window");
+  const mariposaWindow = document.querySelector(".mariposa-window");
+  const contactWindow = document.querySelector(".contact-window");
+  const aboutWindow = document.querySelector(".about-window");
+
+  // desktop items
   const spotavibeDesktop = document.querySelector(".spotavibe");
   const gerritDesktop = document.querySelector(".gerrit");
   const musicDesktop = document.querySelector(".music-vis");
   const robotDesktop = document.querySelector(".singing-robot");
   const mariposaDesktop = document.querySelector(".mariposa");
 
-  const props = {
+  const aboutProps = {
     menuButton: clickAboutMenu,
     windowElement: aboutWindow,
     iconClassName: "about-icon",
@@ -238,8 +221,8 @@ window.onload = function () {
     }
   }
 
-  // create window about and contact
-  new Window(props);
+  // create windows
+  new Window(aboutProps);
   new Window(contactProps);
   new Window(gerritProps);
   new Window(spotavibeProps);
@@ -254,13 +237,18 @@ window.onload = function () {
     dragElement(desktopIcons[i]);
   }
 
+  let windows = document.getElementsByClassName("window");
+  for (let i = 0; i < windows.length; i++) {
+    dragElement(windows[i]);
+  }
   // make windows draggable
-  dragElement(aboutWindow);
-  dragElement(contactWindow);
-  dragElement(gerritWindow);
-  dragElement(robotWindow);
-  dragElement(spotavibeWindow);
-  dragElement(mariposaWindow);
+  // dragElement(aboutWindow);
+  // dragElement(contactWindow);
+  // dragElement(gerritWindow);
+  // dragElement(robotWindow);
+  // dragElement(spotavibeWindow);
+  // dragElement(mariposaWindow);
+  // dragElement(musicWindow);
 
   function dragElement(elmnt) {
     let pos1 = 0,
