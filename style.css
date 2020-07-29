@@ -585,6 +585,10 @@ img {
   position: relative;
   z-index: 9999;
 }
+
+#project-img {
+  width: 22rem;
+}
 /* buttons window */
 .notepad-minimize,
 .notepad-maximize,
@@ -700,6 +704,7 @@ img {
   padding: 2px;
   font-size: 14px;
   overflow: auto;
+  text-align: center;
 }
 .textbox:focus {
   border: inset 2px;
@@ -714,6 +719,7 @@ img {
   padding: 2px;
   font-size: 14px;
   overflow: auto;
+  text-align: center;
 }
 
 .contact-img {
