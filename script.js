@@ -25,15 +25,11 @@ window.onload = function () {
   closemeAbout = document.querySelector(".closeme-about");
   let clickAboutMenu = document.querySelector(".about");
   let clickContactMenu = document.querySelector(".contact");
-  let closemeContact = document.querySelector(".closeme-contact");
-  let contactMaximize = document.querySelector(".contact-maximize");
-  let aboutMaximize = document.querySelector(".about-maximize");
-  let aboutTextbox = document.querySelector(".textbox-about");
-  let contactTextbox = document.querySelector(".textbox-contact");
   const gerritWindow = document.querySelector(".gerrit-window");
   const spotavibeWindow = document.querySelector(".spotavibe-window");
   const musicWindow = document.querySelector(".music-window");
   const robotWindow = document.querySelector(".robot-window");
+  const mariposaWindow = document.querySelector(".mariposa-window");
 
   /* SCREENSAVER */
 
@@ -96,10 +92,10 @@ window.onload = function () {
   const mariposaProject = document.getElementsByClassName(
     "mariposa-project"
   )[0];
-  const mariposaMenu = document.querySelector(".mariposa-menu");
   closemeMariposa = document.querySelector(".closeme-mariposa");
   const mariposaMaximize = document.querySelector(".mariposa-maximize");
   let clickmeMariposa = document.getElementsByClassName("clickme-mariposa");
+  const clickMariposaMenu = document.querySelector(".mariposa-menu");
   const clickGerritMenu = document.querySelector(".gerrit-menu");
   const clickMusicMenu = document.querySelector(".music-menu");
   const clickRobotMenu = document.querySelector(".robot-menu");
@@ -162,7 +158,7 @@ window.onload = function () {
     windowElement: mariposaWindow,
     iconClassName: "mariposa-icon",
     taskText: "mariposa.txt",
-  }
+  };
 
   class Window {
     constructor(props) {
@@ -262,9 +258,9 @@ window.onload = function () {
   dragElement(aboutWindow);
   dragElement(contactWindow);
   dragElement(gerritWindow);
-
-  // make projects draggable
-  dragElement(mariposaProject);
+  dragElement(robotWindow);
+  dragElement(spotavibeWindow);
+  dragElement(mariposaWindow);
 
   function dragElement(elmnt) {
     let pos1 = 0,
