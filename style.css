@@ -582,7 +582,7 @@ body {
 .gerrit-icon {
   width: 32px;
   height: 32px;
-  background-image: url("./images//Gerrit_01.png");
+  background-image: url("./images//Gerrit_01_small.png");
   background-repeat: no-repeat;
   background-position: center center;
 }
