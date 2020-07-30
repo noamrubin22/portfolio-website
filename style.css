@@ -494,12 +494,12 @@ body {
   z-index: 9999;
 }
 
-.project-inf p span {
+.project-inf > p span {
   display: block;
 }
 
 .about-img {
-  background-image: url("./images/about3.JPG");
+  background-image: url("./images/about1.png");
   background-size: cover;
   background-repeat: no-repeat;
   height: 450px;
@@ -734,6 +734,20 @@ img {
   right: 0px;
 }
 
+/* responsive youtube vid */
+.iframe-container {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%;
+  height: 0;
+}
+.iframe-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
 /* .buttons-right {
   position: absolute;
   bottom: 5px;
