@@ -140,7 +140,7 @@ body {
   bottom: 38px;
   /* height: 28%; */
   /* position: fixed; */
-  z-index: 999;
+  z-index: 99999;
 }
 
 .start__menu-main-side {
@@ -484,7 +484,7 @@ body {
 
 .about-window.max {
   width: 100%;
-  height: 93%;
+  height: 96%;
   top: 0 !important;
   left: 0 !important;
   bottom: auto !important;
@@ -492,6 +492,20 @@ body {
   background: #c0c0c0;
   position: relative;
   z-index: 9999;
+  text-align: center;
+}
+
+.about-window .text {
+  width: 90%;
+  display: inline-block;
+}
+.about-window .text-about img {
+  /* margin-right: 10% */
+}
+
+.about-window.max .text {
+  width: 60%;
+  display: inline-block;
 }
 
 .project-inf > p span {
@@ -521,7 +535,7 @@ body {
 
 .project-window.max {
   width: 100%;
-  height: 93%;
+  height: 95%;
   top: 0 !important;
   left: 0 !important;
   bottom: auto !important;
@@ -634,6 +648,12 @@ img {
 #project-img {
   width: 22rem;
 }
+
+.text {
+  width: 80%;
+  display: inline-block;
+}
+
 /* buttons window */
 .notepad-minimize,
 .notepad-maximize,
@@ -774,7 +794,7 @@ img {
   border: inset 2px;
   background: #fff;
   margin: 5px;
-  height: 100%;
+  height: 96%;
   padding: 2px;
   font-size: 14px;
   overflow: auto;
