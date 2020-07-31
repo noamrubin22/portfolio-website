@@ -600,6 +600,36 @@ body {
   background-repeat: no-repeat;
   background-position: center center;
 }
+.mariposa-icon {
+  width: 32px;
+  height: 32px;
+  background-image: url("./images//Mariposa_01_small.png");
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+.spotavibe-icon {
+  width: 32px;
+  height: 32px;
+  background-image: url("./images//Spotavibe_01_small.png");
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+.robot-icon {
+  width: 32px;
+  height: 32px;
+  background-image: url("./images//Tibet_robot_01_small.png");
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+.music-icon {
+  width: 32px;
+  height: 32px;
+  background-image: url("./images//Muxisvi_01_small.png");
+  background-repeat: no-repeat;
+  background-position: center center;
+}
 img {
   width: 32px;
   background: transparent;
