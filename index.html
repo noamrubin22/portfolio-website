@@ -85,10 +85,6 @@
             <img id="contact-img" src="./images/contact.png" alt="contact">
             <p class="start__menu-main-items-item-title settings"><span class="underline"> C</span>ontact</p>
           </li>
-          <!-- <li class="start__menu-main-items-item settings">
-            <div class="settings-img icon bg-img"></div>
-            <p class="start__menu-main-items-item-title settings"><span class="underline">D</span>on't click here!</p>
-          </li> -->
         </ul>
         <ul class="start__menu-main-items-list2">
            <li class="start__menu-main-items-item shutdown">
@@ -126,36 +122,50 @@
       </div>
       <div class="content">
         <div data-textbox class="textbox-about textbox" >
-          <div class="project-header text">
-            <img src="./images/Mariposa_01.png" alt="mariposa">
-            <img src="./images/Mariposa_01.png" alt="mariposa">
-            <img src="./images/Mariposa_01.png" alt="mariposa">
-            <img src="./images/Mariposa_01.png" alt="mariposa">
-            <img src="./images/Mariposa_01.png" alt="mariposa">
-            <h1 id="project-title">Mariposa</h1>
-            <p id="project-description">use your voice to move the butterfly!</p>
-            <p> p5.js * HTML * CSS</p>
-            <a target="_blank" href="https://noamrubin22.github.io/game/">
-              <span>go to game</span>
-            </a>
-            <p><a target="_blank" href="https://github.com/noamrubin22/game">
-              <span>see code</span>
-            </a></p>
+          <div class="left-wi">
+            <div class="project-header text">
+              <img src="./images/Mariposa_01.png" alt="mariposa">
+              <img id="mariposa-img" src="./images/Mariposa_01.png" alt="mariposa">
+              <img id="mariposa-img" src="./images/Mariposa_01.png" alt="mariposa">
+              <img id="mariposa-img" src="./images/Mariposa_01.png" alt="mariposa">
+              <img  src="./images/Mariposa_01.png" alt="mariposa">
+              <h1 id="project-title">Mariposa</h1>
+              <div class="project-description">
+                <span>your voice to move the butterfly!</span>
+                <br>
+                <br>
+                <span>p5.js * HTML * CSS</span>
+              </div>
+              <br>
+              <a target="_blank" href="https://noamrubin22.github.io/game/">
+                <span>go to game</span>
+              </a>
+              <br>
+              <a target="_blank" href="https://github.com/noamrubin22/game">
+                <span>see code</span>
+              </a>
+            </div>
+            <br>
             <hr>
-            <img id="project-img" src="./images/Mariposa_game.png" alt="mariposa game">
+            <br>
+            <div class="image">
+              <img id="project-img" src="./images/Mariposa_game.png" alt="mariposa game">
+            </div>
           </div>
           <div class="project-inf text">
-            <h4 id="project-subtitle">Context</h4>
+            <h2 id="project-subtitle">Context</h2>
             <p>For the first project of the Ironhack web development bootcamp we had 3 days to create a game in <a target="_blank" href="https://p5js.org/">p5.js</a>. I created a “run and jump” game that responds to sound. The goal of the game is to catch as many light orbs as possible in the given time. The butterfly responds to frequency.</p>
             <h4 id="project-subtitle">Development</h4>
             <p>I used the p5.sound library, using .getEnergy() to obtain the frequency input given by the player. The designs for the backgrounds, I found on itch.io. As you might be able to imagine, debugging was a fun process, as I had to sing and scream to my screen.</p>
-            <p>During this projectweek I won the price for “the most creative game”</p>
-            <a target="_blank" href="https://noamrubin22.github.io/game/">
-              <p>go to game</p>
-            </a>
-            <a target="_blank" href="https://github.com/noamrubin22/game">
-            <p>see code</p>
-            </a>
+            <div class="links">
+              <a target="_blank" href="https://noamrubin22.github.io/game/">
+                <span>go to game</span>
+              </a>
+              <br>
+              <a target="_blank" href="https://github.com/noamrubin22/game">
+              <span>see code</span>
+              </a>
+            </div>
           </div>
         </div>
       </div>
@@ -229,39 +239,56 @@
         </div> 
       </div>
       <div class="content">
-        <div data-textbox class="textbox-gerrit textbox" >
-          <div class="project-header text">
-          <img src="./images/Gerrit_01.png" alt="gerrit">
-            <h1 id="project-title">Gerrit</h1>
-            <p id="project-description">chat with random people, near to you!</p>
-            <p> React * MongoDB * Mongoose * Express * socket.io * Node.js * CSS * HTML</p>
-            <a target="_blank" href="https://justgerrit.herokuapp.com/">
-              <span>go to web application</span>
-            </a>
-            <p><a target="_blank" href="https://github.com/noamrubin22/gerrit-project3">
-              <span>see code</span>
-            </a></p>
-            <hr>
-            <img id="project-img" src="./images/geriit_screenshot_01.png" alt="gerrit">
-          </div>
-          <div class="project-inf text">
-            <h4 id="project-subtitle">Context</h4>
-            <p>For the last project of the Ironhack bootcamp we had to create a full-stack MERN (MongoDB, Express, React, Node.js) web application. In teams of 3, we had one week to make it happen. We decided to create a mobile web application that allows users to chat with others only while being in the same location. The idea behind it was to create an environment where neighbors could talk to each other (for example if someone lost their cat/keys), tourists could ask for restaurant tips while being in a specific area and people in- or outside a club can communicate with each other concerning the queue, djs and vibes. Users create a profile but can still stay anonymous, giving them a bit more freedom to express themselves. No one can enter the chat box while not being in the specific location it concerns.</p>
-            <img id="project-img" src="./images/gerrit-chatroom.jpeg" alt="gerrit">
-            <img id="project-img" src="./images/gerrit-profile.jpeg" alt="gerrit">
-            <img id="project-img" src="./images/gerrit-chat.jpeg" alt="gerrit">
-            <h4 id="project-subtitle">Development</h4>
-            <p>This was my first project in React and I can say it surely made the implication of the front end a bit easier. It was a very pleasant experience. The chat was implemented using socket.io. Working in a team of 3 taught me to communicate clearly.</p>
-            <a target="_blank" href="https://justgerrit.herokuapp.com">
-              <p>go to web application</p>
-            </a>
-            <a target="_blank" href="https://github.com/noamrubin22/gerrit-project3">
-            <p>see code</p>
-            </a>
+        <div data-textbox class="textbox-gerrit textbox">
+          <div class="left-wi gerrit" >
+            <div class="project-header text">
+              <img id="gerrit-img" src="./images/Gerrit_01.png" alt="gerrit">
+              <img id="gerrit-img" src="./images/Gerrit_01.png" alt="gerrit">
+              <img id="gerrit-img" src="./images/Gerrit_01.png" alt="gerrit">
+              <img id="gerrit-img" src="./images/Gerrit_01.png" alt="gerrit">
+                <h1 id="project-title">Gerrit</h1>
+                <div class="project-description">
+                  <span>chat with random people, near to you!</span>
+                  <br>
+                  <br>
+                  <span>React * MongoDB * Mongoose * Express * socket.io * Node.js * CSS * HTML</span>
+                </div>
+                <br>
+                <a target="_blank" href="https://justgerrit.herokuapp.com/">
+                  <span>go to web application</span>
+                </a>
+                <br>
+                <a target="_blank" href="https://github.com/noamrubin22/gerrit-project3">
+                  <span>see code</span>
+                </a>
+                <br>
+                <hr>
+                <br>
+              </div>
+              <div class="image">
+                <img id="gerrit-project-img" src="./images/geriit_screenshot_01.png" alt="gerrit">
+              </div>
+            </div>
+            <div class="project-inf gerrit text">
+              <h2 id="project-subtitle">Context</h2>
+              <p>For the last project of the Ironhack bootcamp we had to create a full-stack MERN (MongoDB, Express, React, Node.js) web application. In teams of 3, we had one week to make it happen. We decided to create a mobile web application that allows users to chat with others only while being in the same location. The idea behind it was to create an environment where neighbors could talk to each other (for example if someone lost their cat/keys), tourists could ask for restaurant tips while being in a specific area and people in- or outside a club can communicate with each other concerning the queue, djs and vibes. Users create a profile but can still stay anonymous, giving them a bit more freedom to express themselves. No one can enter the chat box while not being in the specific location it concerns.</p>
+              <h4 id="project-subtitle">Development</h4>
+              <p>The chat was implemented with socket.io.</p>
+              <img id="gerrit-project-img2" src="./images/gerrit-chat.jpeg" alt="gerrit">
+              <br>
+              <div class="links">
+                <a target="_blank" href="https://justgerrit.herokuapp.com">
+                  <span>go to web application</span>
+                </a>
+                <br>
+                <a target="_blank" href="https://github.com/noamrubin22/gerrit-project3">
+                <span>see code</span>
+                </a>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-    </div>
     <div hidden class="robot-window project-window window">
       <div class="titlebar">
         Tibetan Singing Robot
@@ -283,28 +310,44 @@
       </div>
       <div class="content">
         <div data-textbox class="textbox-gerrit textbox" >
-          <div class="project-header text">
-          <img src="./images/Tibet_robot_01.png" alt="tibetan singing robot">
-            <h1 id="project-title">Tibetan Singing Robot</h1>
-            <p id="project-description">forget about your phone, meditate and feel the vibrations</p>
-            <p> Arduino (C++)</p>
-            <p><a target="_blank" href="https://github.com/noamrubin22/meditation-timer">
-              <span>see code</span>
-            </a></p>
+          <div class="left-wi">
+            <div class="project-header text">
+              <img id="tbn-img" src="./images/Tibet_robot_01.png" alt="tibetan singing robot">
+              <img id="tbn-img" src="./images/Tibet_robot_01.png" alt="tibetan singing robot">
+              <img id="tbn-img" src="./images/Tibet_robot_01.png" alt="tibetan singing robot">
+              <h1 id="project-title">Tibetan Singing Robot</h1>
+              <div class="project-description">
+                <span>forget about your phone, meditate and feel the vibrations</span>
+                <br>
+                <br>
+                <span> Arduino (C++)</span>
+              </div>
+              <br>
+              <a target="_blank" href="https://github.com/noamrubin22/meditation-timer">
+                <span>see code</span>
+              </a>
+            </div>
+            <br>
             <hr>
-            <img src="./images/meditation_timer.JPG" alt="tibetan singing robot">
-            <div class="iframe-container">
-              <iframe width="560" height="315" src="https://www.youtube.com/embed/sbsy71sUIUE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <br>
+            <div class="image">
+              <img id="meditation-timer-img" src="./images/meditation_timer.JPG" alt="tibetan singing robot">
+            </div> 
           </div>
-          </div>
-          <div class="project-inf text">
+          <div class="project-inf robot text">
             <h4 id="project-subtitle">Context</h4>
             <p>I am a daily meditator. I usually use a youtube-video that plays a tone when the time is up. For me, this became a problem since I always had to have a look at my phone before starting. Instead of being influenced by messages or the temptation of social media I prefer to start my meditation with a clean mind. I optimized the situation by creating a physical meditation timer, combining a Tibetan singing bowl and Arduino.</p>
             <h4 id="project-subtitle">Development</h4>
-            <p>Using Arduino hardware, I soldered a switch, display and motor to an Arduino UNO. Users can set the amount of minutes they want to meditate, click to start and than have 5 seconds to sit. The motor plays the bowl at the start and at the end of the meditation. </p>
-            <a target="_blank" href="https://github.com/noamrubin22/meditation-timer">
-            <p>see code</p>
-            </a>
+            <img id="circuit" src="./images/circuit.png" alt="circuit singing robot">
+            <p>Using Arduino hardware, I soldered a switch, display and motor to an Arduino UNO. Users can set the amount of minutes they want to meditate, click to start and than have 5 seconds to sit. The motor plays the bowl at the start and at the end of the time set. </p>
+            <div class="iframe-container">
+              <iframe width="560" height="315" src="https://www.youtube.com/embed/sbsy71sUIUE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            <div class="links">
+              <a target="_blank" href="https://github.com/noamrubin22/meditation-timer">
+              <span>see code</span>
+              </a>
+            </div>
           </div>
         </div>
       </div>
@@ -330,36 +373,50 @@
       </div>
       <div class="content">
         <div data-textbox class="textbox-gerrit textbox" >
+          <div class="left-wi">
           <div class="project-header text">
-          <img src="./images/spotavibe_01.png" alt="spotavibe">
+            <img id="spotavibe-img" src="./images/spotavibe_01.png" alt="spotavibe">
+            <img id="spotavibe-img" src="./images/spotavibe_01.png" alt="spotavibe">
+            <img id="spotavibe-img" src="./images/spotavibe_01.png" alt="spotavibe">
             <h1 id="project-title">Spotavibe</h1>
-            <p id="project-description">catches your vibe and calms you down</p>
-            <p> Arduino * handlebars * restAPI * Spotify API * MongoDB * Mongoose * Node.js * HTML * CSS * JavaScript</p>
+            <div class="project-description">
+              <span>catches your vibe and calms you down</span>
+              <br>
+              <br>
+              <span>Arduino * handlebars * restAPI * Spotify API * MongoDB * Mongoose * Node.js * HTML * CSS * JavaScript</span>
+            </div>
+            <br>
             <a target="_blank" href="http://spotavibe.herokuapp.com/">
               <span>go to website</span>
             </a>
-            <p><a target="_blank" href="https://github.com/noamrubin22/spotavibe">
-              <span>see code</span>
-            </a></p>
-            <hr>
-            <img id="project-img" src="./images/spotavibe.png" 
-            alt="spotavibe website">
-           
-            <div class="project-inf text">
-              <h4 id="project-subtitle">Context</h4>
-              <p>In the second project week of the Ironhack bootcamp we had 4 days to create a web application with a backend, working in teams of 2. We created a web application that generates Spotify playlists that calms the users down by filtering songs on BPM using their heart pulse. Users can choose one of the 3 BPM measurement options, with the Arduino heartpulse sensor, manually and by feeling and tapping their heartbeat using the website. A statistics page is keeping track of the BPM history and playlists of the user. 
-                <img id="project-img" src="./images/spotavibe1.png" alt="spotavibe playlists">
-                <img id="project-img" src="./images/spotavibe2.png" alt="spotavibe statistics">
-              </div>
-              <h4 id="project-subtitle">Development</h4>
-              <p>We were using the Arduino heart pulse sensor and connected it to node.js using the serial port library (childprocessing). Using the Spotify API we were able to collect the filtered songs from the metadata. </p>
-              <img id="project-img" src="./images/spotavibe_heartpulse.png" alt="spotavibe heartpulse sensor">
-              <a target="_blank" href="http://spotavibe.herokuapp.com/">
-              <p>go to website</p>
-            </a>
+            <br>
             <a target="_blank" href="https://github.com/noamrubin22/spotavibe">
-            <p>see code</p>
+              <span>see code</span>
             </a>
+          </div>
+          <br>
+          <hr>
+          <br>
+          <div class="image">
+            <img id="spotavibe-project-img" src="./images/spotavibe3.png" 
+          alt="spotavibe website">
+          </div>
+        </div>
+        <div class="project-inf text">
+          <h2 id="project-subtitle">Context</h2>
+            <p>In the second project week of the Ironhack bootcamp we had 4 days to create a web application with a backend, working in teams of 2. My team created a web application that generates Spotify playlists that calms the users down by filtering songs on BPM using their heart pulse. Users can choose one of the 3 BPM measurement options, with the Arduino heartpulse sensor, manually and by feeling and tapping their heartbeat using the website. A statistics page is keeping track of the BPM history and playlists of the user. </p>
+          <h4 id="project-subtitle">Development</h4>
+            <p>We were using the Arduino heart pulse sensor and connected it to node.js using the serial port library (childprocessing). Using the Spotify API we were able to collect the filtered songs from the metadata. 
+            </p>
+            <div class="links">
+              <a target="_blank" href="http://spotavibe.herokuapp.com/">
+                <span>go to website</span>
+              </a>
+              <br>
+              <a target="_blank" href="https://github.com/noamrubin22/spotavibe">
+                <span>see code</span>
+              </a>
+            </div>
           </div>
         </div>
       </div>
@@ -385,31 +442,45 @@
       </div>
       <div class="content">
         <div data-textbox class="textbox-gerrit textbox" >
-          <div class="project-header text">
-          <img src="./images/Muxisvi_01.png" alt="music visualization">
-            <h1 id="project-title">Music visualization</h1>
-            <p id="project-description">alter your songs and learn about the mechanism behind them</p>
-            <p> JavaScript * d3.js * HTML * CSS </p>
-            <a target="_blank" href="https://noamrubin22.github.io/music-visualization/">
+          <div class="left-wi">
+            <div class="project-header text">
+              <img src="./images/Muxisvi_01.png" alt="music visualization">
+              <h1 id="project-title">Music visualization</h1>
+              <div id="project-description">
+                <span>alter your songs and learn about the mechanism behind them</span>
+                <br>
+                <br>
+                <span> JavaScript * d3.js * HTML * CSS </span>
+              </div>
+              <a target="_blank" href="https://noamrubin22.github.io/music-visualization/">
               <span>go to website</span>
-            </a>
-            <p><a target="_blank" href="https://github.com/noamrubin22/music-visualization">
-              <span>see code</span>
-            </a></p>
+              </a>
+              <br>
+              <a target="_blank" href="https://github.com/noamrubin22/music-visualization">
+                <span>see code</span>
+              </a>
+            </div>
+            <br>
             <hr>
-            <img id="project-img" src="./images/music-vis.png" alt="music visualization">
+            <br>
+            <div class="image">
+              <img id="music-img" src="./images/music-viz.png" alt="music visualization">
+            </div>
           </div>
           <div class="project-inf text">
             <h4 id="project-subtitle">Context</h4>
             <p>For the final project of my Computer Science minor we had to create a data visualization linking 3 different graphs using <a href="https://d3js.org/">d3.js</a>. I chose to use music as my data and also added a “synthesizer” to give the user the possibility to manipulate sound and graphs, creating a learning environment. During that time I didn’t have enough time to work on the styling so I decided to give <a target="_blank" href="https://github.com/noamrubin22/finalproject">my old project</a> new life. I fixed some bugs, changed the styling and made sure that users can upload their own songs.</p>
             <h4 id="project-subtitle">Development</h4>
             <p>The AudioContext WebAPI, helped me to retrieve and manipulate data from different songs. I obtained the frequency and wavelength to form a bar chart and circle chart, using recursive functions to create live-updating charts.</p>
-            <a target="_blank" href="https://noamrubin22.github.io/music-visualization/">
-              <p>go to website</p>
-            </a>
-            <a target="_blank" href="https://github.com/noamrubin22/music-visualization">
-            <p>see code</p>
-            </a>
+            <div class="links">
+              <a target="_blank" href="https://noamrubin22.github.io/music-visualization/">
+                <span>go to website</span>
+              </a>
+              <br>
+              <a target="_blank" href="https://github.com/noamrubin22/music-visualization">
+              <span>see code</span>
+              </a>
+            </div>
           </div>
         </div>
       </div>

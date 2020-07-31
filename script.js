@@ -13,7 +13,7 @@ window.onload = function () {
 
   /* SCREENSAVER */
 
-  screenSaver.hidden = true; // remove this in the end!
+  // screenSaver.hidden = true; // remove this in the end!
   // show screensaver after no mousemove
   var timeout;
   document.onmousemove = function () {
