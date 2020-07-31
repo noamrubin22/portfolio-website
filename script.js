@@ -12,15 +12,13 @@ window.onload = function () {
   let shutDown = document.querySelector(".shutdown");
 
   /* SCREENSAVER */
-
-  // screenSaver.hidden = true; // remove this in the end!
   // show screensaver after no mousemove
   var timeout;
   document.onmousemove = function () {
     clearTimeout(timeout);
     timeout = setTimeout(function () {
       screenSaver.hidden = false;
-    }, 120000);
+    }, 180000);
   };
 
   // hide screensaver on mouse move
@@ -63,7 +61,6 @@ window.onload = function () {
   });
 
   /* OPENS WINDOW AND ADD TASK TO TASKBAR */
-  // store variables
   // menu buttons
   const clickAboutMenu = document.querySelector(".about");
   const clickContactMenu = document.querySelector(".contact");
@@ -241,21 +238,12 @@ window.onload = function () {
   for (let i = 0; i < windows.length; i++) {
     dragElement(windows[i]);
   }
-  // make windows draggable
-  // dragElement(aboutWindow);
-  // dragElement(contactWindow);
-  // dragElement(gerritWindow);
-  // dragElement(robotWindow);
-  // dragElement(spotavibeWindow);
-  // dragElement(mariposaWindow);
-  // dragElement(musicWindow);
 
   function dragElement(elmnt) {
     let pos1 = 0,
       pos2 = 0,
       pos3 = 0,
       pos4 = 0;
-    console.log("drag");
     elmnt.onmousedown = dragMouseDown;
 
     function dragMouseDown(e) {

@@ -1,6 +1,5 @@
 function starField() {
   const canvas = document.getElementById("canvas");
-  console.log(canvas);
   const c = canvas.getContext("2d");
   let contactContent = document.getElementById("contact-content");
   let contactTextBox = document.querySelector(".textbox-contact");
@@ -88,14 +87,12 @@ function starField() {
     c.fillText(
       `I believe evolution is about cooperation instead of competition.`,
       w / 2,
-      h / 1.3
+      h / 1.1
     );
     c.fillText(`Get in touch`, w / 2, h / 8);
 
     let img = new Image();
     img.addEventListener("load", function () {});
-    // drawImage(img, w / 2, h / 2);
-    // img.src = "sesameRight.png";
     const cx = w / 2;
     const cy = h / 2;
 
