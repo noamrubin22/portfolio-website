@@ -88,9 +88,9 @@ function starField() {
     c.fillText(
       `I believe evolution is about cooperation instead of competition.`,
       w / 2,
-      h / 8
+      h / 1.3
     );
-    c.fillText(`Get in touch`, w / 2, h / 3);
+    c.fillText(`Get in touch`, w / 2, h / 8);
 
     let img = new Image();
     img.addEventListener("load", function () {});

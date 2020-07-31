@@ -93,7 +93,7 @@ window.onload = function () {
     menuButton: clickAboutMenu,
     windowElement: aboutWindow,
     iconClassName: "about-icon",
-    taskText: "about.txt - Notepad",
+    taskText: "about.txt",
   };
 
   const contactProps = {
