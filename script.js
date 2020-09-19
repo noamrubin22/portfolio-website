@@ -10,7 +10,7 @@ window.onload = function () {
   let programsMenu = document.querySelector(".sub__programs");
   let screenSaver = document.getElementById("screensaver");
   let shutDown = document.querySelector(".shutdown");
-
+  let item;
   /* SCREENSAVER */
   // show screensaver after no mousemove
   var timeout;
@@ -176,6 +176,31 @@ window.onload = function () {
         this.toggleWindow();
         starField();
       });
+
+      if (this.props.desktopButton) {
+        this.props.desktopButton.addEventListener("click", () => {
+          console.log("clickedonce");
+          this.props.desktopButton.style.cssText =
+            "background-color: rebeccapurple";
+
+          item = this.props.desktopButton;
+
+          setTimeout(function () {
+            setToPurple(item);
+            setColorToNone(item);
+          }, 500);
+        });
+
+        function setColorToNone(desktopButton) {
+          desktopButton.style.cssText = "background-color: none";
+          console.log("FUNCTION NONE");
+        }
+        function setToPurple(desktopButton) {
+          desktopButton.style.cssText = "background-color: rebeccapurple";
+          console.log("PURPLE FUNCTION");
+        }
+      }
+
       if (this.props.desktopButton) {
         this.props.desktopButton.addEventListener("dblclick", () => {
           if (this.task) {
