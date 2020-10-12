@@ -1,6 +1,6 @@
 body {
   background: black;
-  font-family: "Georgia";
+  font-family: "minion-pro", times, serif;
   height: 100%;
   margin: 0;
   padding: 0;
@@ -14,11 +14,12 @@ body {
   left: 0;
   top: 0;
 }
+
 .monitor {
   position: relative;
   width: 100%;
   height: 100%;
-  background: rgb(109, 43, 109);
+  background: url("http://api.thumbr.it/whitenoise-361x370.png?background=532c69ff&noise=470c47&density=100&opacity=80");
   overflow: hidden;
 }
 
@@ -30,7 +31,7 @@ body {
   position: absolute;
   bottom: 0;
   width: 100%;
-  height: 35px;
+  height: 48px;
   background: #c3c6cd;
   border-top: 3px solid #deebf3;
   display: -webkit-box;
@@ -43,7 +44,7 @@ body {
 }
 
 .start__button {
-  width: 8%;
+  width: 7%;
   height: 72%;
   background: #c3c6cd;
   border-top: 2px solid #deebf3;
@@ -71,15 +72,14 @@ body {
 }
 
 .start__logo {
-  width: 35px;
-  height: 18px;
+  width: 36px;
+  height: 21px;
   position: relative;
 }
 
 .start__logo::after {
   content: "";
-  background: url(https://banner2.kisspng.com/20180821/hrt/kisspng-windows-95-windows-98-microsoft-windows-transparen-windows-95-telegram-stickers-directory-5b7c3cffc178a8.4526616315348687357925.jpg)
-    transparent;
+  background: url(https://banner2.kisspng.com/20180821/hrt/kisspng-windows-95-windows-98-microsoft-windows-transparen-windows-95-telegram-stickers-directory-5b7c3cffc178a8.4526616315348687357925.jpg) transparent;
   background-size: contain;
   mix-blend-mode: multiply;
   top: 0;
@@ -87,11 +87,15 @@ body {
   bottom: 0;
   right: 0;
   position: absolute;
+  background-repeat: no-repeat;
+  width: 36px;
+  height: 21px;
 }
 
 .start__text {
-  font-size: 14px;
+  font-size: 21px;
   font-weight: bold;
+  margin: 0px;
 }
 
 .tasks {
@@ -100,15 +104,17 @@ body {
   flex-direction: row;
   justify-content: flex-start;
 }
+
 .start__time {
-  width: 80px;
+  width: 95px;
   height: 72%;
   background: #c3c6cd;
   border-top: 2px solid #85888f;
   border-left: 2px solid #85888f;
   border-right: 2px solid #deebf3;
   border-bottom: 2px solid #deebf3;
-  margin: 3px;
+  margin: 4px;
+  margin-right: 6px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -119,7 +125,7 @@ body {
 
 .start__time-text {
   margin: auto;
-  font-size: 12px;
+  font-size: 15px;
 }
 
 .start__menu-main {
@@ -128,10 +134,10 @@ body {
   border-left: 2px solid #deebf3;
   border-right: 2px solid black;
   border-bottom: 2px solid black;
-  width: 8%;
+  width: 13%;
   display: none;
   position: absolute;
-  bottom: 38px;
+  bottom: 51px;
   z-index: 99999;
 }
 
@@ -142,7 +148,7 @@ body {
 
 .start__menu-main-side-text {
   position: relative;
-  margin-top: 70px;
+  margin-top: 151px;
 }
 
 .start__menu-main-side-text .windows {
@@ -150,13 +156,18 @@ body {
   color: #c3c6cd;
   -webkit-transform: rotate(270deg);
   transform: rotate(270deg);
+  font-size: 29px;
+  margin-bottom: 0px;
+  margin-left: 5px;
 }
 
 .start__menu-main-side-text .ninefive {
   color: white;
   -webkit-transform: rotate(270deg);
   transform: rotate(270deg);
-  margin-bottom: 56px;
+  margin-bottom: 88px;
+  font-size: 25px;
+  margin-left: 5px;
 }
 
 .start__menu-main-items {
@@ -165,16 +176,16 @@ body {
 }
 
 .start__menu-main-items .icon {
-  width: 30px;
-  height: 30px;
+  width: 42px;
+  height: 42px;
   padding-left: 5px;
   padding-right: 5px;
 }
 
 .start__menu-main-items-item {
-  font-size: 12px;
+  font-size: 16px;
   padding-top: 3px;
-  padding-bottom: 3px;
+  padding-bottom: 10px;
   width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -220,7 +231,7 @@ body {
   -webkit-box-direction: normal;
   -ms-flex-direction: column;
   flex-direction: column;
-  width: 180px;
+  width: 187px;
   left: 100%;
   padding: 0;
   display: none;
@@ -239,6 +250,7 @@ body {
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  padding: 4px 5px 6px 4px;
 }
 
 .start__menu-sub-items-item:hover {
@@ -305,6 +317,7 @@ body {
 #mariposa-icon {
   width: 75px;
 }
+
 #gerrit-icon {
   width: 67px;
   z-index: 2;
@@ -326,10 +339,12 @@ body {
   top: 0px;
   left: 10px;
 }
+
 .gerrit {
   top: 140px;
   left: 14px;
 }
+
 .music-vis {
   top: 270px;
   left: 20px;
@@ -339,6 +354,7 @@ body {
   top: 10px;
   left: 140px;
 }
+
 .singing-robot {
   top: 140px;
   left: 140px;
@@ -368,6 +384,7 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  transition: visibility 0s, opacity 0.5s linear;
 }
 
 .icon-clicked {
@@ -383,8 +400,15 @@ body {
 }
 
 #volume-img {
-  width: 24px;
+  width: 27px;
+  margin-top: 0px;
 }
+
+img#contact-img {
+  margin-right: 10px;
+  /* background: green; */
+}
+
 .bg-img {
   background-image: url(https://i.pinimg.com/originals/96/17/c0/9617c03faeb0986659acd2fa7ff87a26.png);
   -o-object-fit: cover;
@@ -395,7 +419,7 @@ body {
 }
 
 .settings-img {
-  background-position: 87% 21%;
+  background-position: 88% 21%;
 }
 
 .find-img {
@@ -408,6 +432,14 @@ body {
 
 .shutdown-img {
   background-position: 75% 79%;
+  padding-left: 0px;
+  padding-right: 0px;
+}
+
+.settings {
+  background-position: 75% 79%;
+  padding-left: 0px;
+  padding-right: 0px;
 }
 
 .task {
@@ -416,11 +448,12 @@ body {
   bottom: 1px;
   border: outset 2px;
   font-weight: 400;
-  font-size: 14px;
+  font-size: 18px;
   display: flex;
   align-content: flex-start;
   align-items: center;
 }
+
 .contact-icon {
   width: 14px;
   height: 14px;
@@ -429,6 +462,7 @@ body {
   background-repeat: no-repeat;
   background-position: center center;
 }
+
 .about-task {
   width: 157px;
   top: 1px;
@@ -485,11 +519,12 @@ body {
   display: inline-block;
 }
 
-.textbox.max > .about-text {
+.textbox.max>.about-text {
   width: 100%;
   margin: 2rem;
 }
-.project-inf > p span {
+
+.project-inf>p span {
   display: block;
 }
 
@@ -497,18 +532,21 @@ body {
   display: inline-block;
   width: 100px;
 }
+
 .about-img {
   background-image: url("./images/about1.png");
   background-size: cover;
   background-repeat: no-repeat;
   height: 450px;
 }
+
 .about-img:hover {
   background-image: url("./images/about2.JPG");
   background-size: cover;
   background-repeat: no-repeat;
   height: 450px;
 }
+
 .project-window {
   width: 600px;
   height: 600px;
@@ -538,6 +576,7 @@ body {
   background: #c0c0c0;
   z-index: 9999;
 }
+
 .contact-window.max {
   width: 100%;
   height: 95%;
@@ -556,7 +595,7 @@ body {
 }
 
 .sidebar {
-  height: 25px;
+  height: 34px;
   margin: 2px;
   align-self: center;
   border: outset 2px;
@@ -583,6 +622,7 @@ body {
   background-repeat: no-repeat;
   background-position: center center;
 }
+
 .mariposa-icon {
   width: 32px;
   height: 32px;
@@ -598,6 +638,7 @@ body {
   background-repeat: no-repeat;
   background-position: center center;
 }
+
 .robot-icon {
   width: 32px;
   height: 32px;
@@ -613,19 +654,25 @@ body {
   background-repeat: no-repeat;
   background-position: center center;
 }
+
 img {
-  width: 32px;
+  width: 34px;
   background: transparent;
-  -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#00FFFFFF,endColorstr=#00FFFFFF)"; /* IE8 */
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#00FFFFFF,endColorstr=#00FFFFFF); /* IE6 & 7 */
+  -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#00FFFFFF,endColorstr=#00FFFFFF)";
+  /* IE8 */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#00FFFFFF, endColorstr=#00FFFFFF);
+  /* IE6 & 7 */
   zoom: 1;
+  margin-top: 7px;
 }
+
 #github-icon:hover,
 #linkedin-icon:hover,
 #email-icon:hover {
   cursor: pointer;
   background: purple;
 }
+
 .linkedin-icon,
 .email-icon {
   width: 32px;
@@ -665,6 +712,7 @@ img {
 .textbox.max {
   display: flex;
 }
+
 .text {
   width: 80%;
   display: inline-block;
@@ -735,7 +783,7 @@ img {
 }
 
 .titlebar {
-  background: #000080;
+  background: #370955;
   position: absolute;
   top: 0px;
   right: 0px;
@@ -777,6 +825,7 @@ img {
   padding-bottom: 56.25%;
   height: 0;
 }
+
 .iframe-container iframe {
   position: absolute;
   top: 0;
@@ -788,7 +837,9 @@ img {
 /* textbox content windows */
 .textbox {
   border: inset 2px;
-  background: #fff;
+  /* color: url("http://api.thumbr.it/whitenoise-361x370.png?background=532c69ff&noise=470c47&density=100&opacity=80"); */
+  background: white;
+  color: #6d4286;
   margin: 5px;
   height: 90%;
   padding: 2px;
@@ -796,6 +847,7 @@ img {
   overflow: auto;
   text-align: center;
 }
+
 .textbox:focus {
   border: inset 2px;
   outline: none;
@@ -829,6 +881,7 @@ h1 {
   width: 300px;
   margin-left: auto;
 }
+
 #gerrit-project-img2 {
   width: 300px;
   margin-left: 5rem;
@@ -844,7 +897,7 @@ h1 {
   margin-top: 2rem;
 }
 
-.project-inf > p {
+.project-inf>p {
   font-size: 1.2rem;
 }
 
@@ -852,27 +905,29 @@ h1 {
   text-align: left;
 }
 
-.textbox.max > .project-inf > .links {
+.textbox.max>.project-inf>.links {
   text-align: center;
   font-size: 1rem;
   padding: 2rem;
 }
 
-.textbox.max > .left-wi > .project-header {
+.textbox.max>.left-wi>.project-header {
   font-size: 1.2rem;
 }
 
-.textbox.max > .left-wi > .image > #project-img {
+.textbox.max>.left-wi>.image>#project-img {
   width: 100%;
 }
-.textbox.max > .project-inf {
+
+.textbox.max>.project-inf {
   margin: 1rem;
   padding: 7rem;
 }
 
-.textbox.max > .left-wi {
+.textbox.max>.left-wi {
   margin: 4rem;
 }
+
 .contact-img {
   width: 200px;
 }
@@ -881,16 +936,16 @@ h1 {
   text-align: center;
 }
 
-.textbox.max > .left-wi.gerrit {
+.textbox.max>.left-wi.gerrit {
   width: 60%;
 }
 
-.textbox.max > .project-inf.gerrit {
+.textbox.max>.project-inf.gerrit {
   margin: 2rem;
   padding: 2rem;
 }
 
-.textbox.max > .project-inf.gerrit > img {
+.textbox.max>.project-inf.gerrit>img {
   margin: auto;
   padding-left: 25%;
 }
@@ -898,9 +953,11 @@ h1 {
 #tbn-img {
   width: 100px;
 }
+
 #music-img {
   width: 100%;
 }
+
 #spotavibe-img {
   width: 80px;
 }
@@ -918,15 +975,16 @@ h1 {
   width: 100%;
 }
 
-.textbox.max > .project-inf.robot {
+.textbox.max>.project-inf.robot {
   width: 100%;
   margin: 2rem;
   padding: 2rem;
 }
 
-.textbox.max > .left-wi {
+.textbox.max>.left-wi {
   width: 70%;
 }
+
 #github-contact {
   position: absolute;
   bottom: 29%;

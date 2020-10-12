@@ -11,6 +11,7 @@ window.onload = function () {
   let screenSaver = document.getElementById("screensaver");
   let shutDown = document.querySelector(".shutdown");
   let item;
+
   /* SCREENSAVER */
   // show screensaver after no mousemove
   var timeout;
@@ -35,8 +36,10 @@ window.onload = function () {
   // start menu appears on click, dissapears on click somewhere else
   body.onclick = function (e) {
     for (let i = 0, l = e.target.classList.length; i < l; ++i) {
-      if (/start__.*/.test(e.target.classList[i])) {
+      if ((/start__.*/.test(e.target.classList[i])) || ((/start__menu-sub-items.sub-items.*/.test(e.target.classList[i])))) {
         break;
+        // } else if ((/start__menu-sub-items.sub-items.*/.test(e.target.classList[i]))) {
+        //   startMenu.classList.remove("menu-open");
       } else {
         startMenu.classList.remove("menu-open");
       }
